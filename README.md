@@ -25,6 +25,7 @@ The models (usd and xml) identified so far can be found in the folder **robot_mo
 | [b2](./robot_model/b2) | 2026-11-07 | 2026-09-30 |  |
 | [go2](./robot_model/go2) | 2026-11-07 | 2026-09-30 | ✓ |
 | [hyqreal2](./robot_model/hyqreal2) | 2026-11-07 | 2026-09-30 | X |
+| [h1](./robot_model/h1) | 2026-11-14 | - |  |
 | [pegasus](./robot_model/pegasus) | 2026-11-07 | 2026-11-04 |  |
 | [piper_l](./robot_model/piper_l) | 2026-11-07 | 2026-09-30 | ✓ |
 | [z1](./robot_model/z1) | 2026-11-07 | 2026-09-30 | ✓ |
@@ -113,6 +114,9 @@ In `pixi shell -e humble` (or `lyrical`):
 ```bash
 python3 sysid_mujoco/my_fit.py 
 ```
+
+For H1 DDS logs and the native-MuJoCo CMA-ES workflow, see
+[the MuJoCo SysID guide](sysid_mujoco/README.md#h1-dds-conversion-and-cma-es).
 
 ## How to contribute
 

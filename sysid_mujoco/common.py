@@ -124,6 +124,9 @@ def _remove_all_by_tag(root: ET.Element, tag: str) -> None:
 
 def _absolutize_file_attributes(root: ET.Element, base_dir: Path) -> None:
     # Generated XML lives elsewhere; preserve asset paths relative to the source.
+    compiler = root.find("compiler")
+    mesh_dir = Path(compiler.get("meshdir", "")) if compiler is not None else Path()
+    texture_dir = Path(compiler.get("texturedir", "")) if compiler is not None else Path()
     for element in root.iter():
         file_attribute = element.get("file")
         if file_attribute is None:
@@ -131,7 +134,13 @@ def _absolutize_file_attributes(root: ET.Element, base_dir: Path) -> None:
         file_path = Path(file_attribute)
         if file_path.is_absolute():
             continue
-        element.set("file", str((base_dir / file_path).resolve()))
+        asset_dir = mesh_dir if element.tag == "mesh" else texture_dir if element.tag == "texture" else Path()
+        element.set("file", str((base_dir / asset_dir / file_path).resolve()))
+    # File paths are now absolute; retaining these prefixes would apply them a
+    # second time when MuJoCo compiles the generated XML.
+    if compiler is not None:
+        compiler.attrib.pop("meshdir", None)
+        compiler.attrib.pop("texturedir", None)
 
 
 def _rewrite_actuators_as_general(
@@ -391,6 +400,30 @@ def chunk_processed_trajectory(
         start = end
         chunk_index += 1
     return chunks or [trajectory]
+
+
+def apply_command_delay(trajectory: ProcessedTrajectory, delay_s: float) -> ProcessedTrajectory:
+    """Delay recorded controls with zero-order hold on the trajectory grid."""
+    if delay_s < 0.0 or not np.isfinite(delay_s):
+        raise ValueError("Command delay must be finite and nonnegative.")
+    if delay_s == 0.0:
+        return trajectory
+    source_times = trajectory.times - delay_s
+    indices = np.searchsorted(trajectory.times, source_times, side="right") - 1
+    indices = np.clip(indices, 0, len(trajectory.times) - 1)
+    return ProcessedTrajectory(
+        source_path=trajectory.source_path,
+        sequence_name=trajectory.sequence_name,
+        times=trajectory.times,
+        measured_qpos=trajectory.measured_qpos,
+        measured_qvel=trajectory.measured_qvel,
+        desired_qpos=trajectory.desired_qpos,
+        ctrl=trajectory.ctrl[indices],
+        joint_names=list(trajectory.joint_names),
+        actuator_names=list(trajectory.actuator_names),
+        kp=trajectory.kp,
+        kd=trajectory.kd,
+    )
 
 
 def processed_to_sysid_trajectory(sysid, model, trajectory: ProcessedTrajectory):

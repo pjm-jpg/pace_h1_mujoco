@@ -14,8 +14,9 @@ REPO_ROOT = Path(__file__).resolve().parents[1]
 if str(REPO_ROOT) not in sys.path:
     sys.path.insert(0, str(REPO_ROOT))
 
-from sysid_mujoco.common import build_fixed_base_model_xml
+from sysid_mujoco.common import apply_command_delay
 from sysid_mujoco.common import build_actuator_gain_map
+from sysid_mujoco.common import build_fixed_base_model_xml
 from sysid_mujoco.common import build_parameter_dict
 from sysid_mujoco.common import chunk_processed_trajectory
 from sysid_mujoco.common import clip_parameter_values_inside_bounds
@@ -323,7 +324,8 @@ def add_joint_velocity_sensors(spec):
 
 
 def joint_position_velocity_residual(
-    params, predicted, measured, model, return_pred_all, *, velocity_weight=0.1, **kwargs
+    params, predicted, measured, model, return_pred_all, *, velocity_weight=0.1,
+    score_joints=None, **kwargs
 ):
     """Keep sysid normalization, with finite residuals for stationary joints."""
     # The rollout stores the sensors computed inside mj_step, i.e. on the state
@@ -346,8 +348,23 @@ def joint_position_velocity_residual(
     residual = sysid.weighted_diff(
         predicted.data, measured.data, model=model, sensor_weights=sensor_weights
     )
+    if score_joints:
+        selected = set(score_joints)
+        sensor_mask = np.asarray(
+            [
+                model.joint(int(model.sensor_objid[sensor_id])).name in selected
+                for sensor_id in range(model.nsensor)
+            ],
+            dtype=bool,
+        )
+        if not np.any(sensor_mask):
+            raise ValueError(f"No sensors correspond to score joints {sorted(selected)}.")
+        residual = residual[:, sensor_mask]
+        measured_for_scale = measured.data[:, sensor_mask]
+    else:
+        measured_for_scale = measured.data
     # Preserve sysid's normalization independently for each measured signal.
-    scale = np.linalg.norm(measured.data, axis=0) / np.sqrt(2)
+    scale = np.linalg.norm(measured_for_scale, axis=0) / np.sqrt(2)
     # MuJoCo's default normalization divides by zero for a zero-valued signal.
     # Use unit scale for these channels so stationary joints remain in the fit.
     scale = np.where(scale > np.finfo(float).eps, scale, 1.0)
@@ -481,6 +498,7 @@ def build_model_sequences_from_source(
     robot: str,
     dataset_paths: list[Path],
     chunk_size: int,
+    command_delay_s: float = 0.0,
 ):
     measurement_ts = []
     control_ts = []
@@ -494,6 +512,7 @@ def build_model_sequences_from_source(
             model=model,
             mujoco=mujoco,
         )
+        processed = apply_command_delay(processed, command_delay_s)
         if _is_piper_robot(robot):
             processed = _extend_piper_state_to_joint8(processed, model)
         # The rollout applies one recorded control per simulation step.

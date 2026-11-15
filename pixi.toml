@@ -33,6 +33,7 @@ readchar = "*"
 torch = "*"
 mujoco = { version = "==3.13.0", extras = ["sysid"] }
 scipy = "*"
+cmaes = "*"
 
 [feature.common.activation.env]
 # Restrict DDS discovery to this machine. Each distro reads only one of the two:
@@ -89,3 +90,4 @@ default = { features = ["common", "lyrical"], solve-group = "lyrical" }
 humble = ["common", "humble"]
 lyrical = { features = ["common", "lyrical"], solve-group = "lyrical" }
 isaaclab = ["isaaclab"]
+mujoco = { features = ["common"], no-default-feature = true }

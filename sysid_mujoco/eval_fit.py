@@ -23,6 +23,7 @@ from sysid_mujoco.common import _absolutize_file_attributes
 from sysid_mujoco.common import _disable_all_collisions
 from sysid_mujoco.common import _remove_all_by_tag
 from sysid_mujoco.common import _rewrite_actuators_as_general
+from sysid_mujoco.common import apply_command_delay
 from sysid_mujoco.common import build_actuator_gain_map
 from sysid_mujoco.common import build_fixed_base_model_xml
 from sysid_mujoco.common import get_actuated_joint_and_actuator_names
@@ -69,7 +70,28 @@ def parse_args() -> argparse.Namespace:
             "model selected via scene_flat.xml."
         ),
     )
-    return parser.parse_args()
+    parser.add_argument(
+        "--identified-model-xml",
+        type=Path,
+        default=None,
+        help="Optional identified fixed-base XML to replay beside the baseline model.",
+    )
+    parser.add_argument(
+        "--joints",
+        nargs="+",
+        default=None,
+        help="Only report and plot these exact joint names.",
+    )
+    parser.add_argument(
+        "--command-delay-ms",
+        type=float,
+        default=0.0,
+        help="Apply the same zero-order-held command delay used during fitting.",
+    )
+    args = parser.parse_args()
+    if args.command_delay_ms < 0.0:
+        parser.error("--command-delay-ms must be nonnegative")
+    return args
 
 
 def default_output_dir(robot: str) -> Path:
@@ -282,6 +304,7 @@ def plot_joint_trajectories(
     desired_qpos: np.ndarray,
     measured_qpos: np.ndarray,
     simulated_qpos: np.ndarray,
+    identified_qpos: np.ndarray | None,
     joint_names: list[str],
     robot: str,
     dataset_path: Path,
@@ -330,11 +353,20 @@ def plot_joint_trajectories(
         axis.plot(
             times,
             simulated_qpos[:, joint_index],
-            label="simulated",
+            label="original MuJoCo",
             color="tab:red",
             linewidth=1.2,
             alpha=0.95,
         )
+        if identified_qpos is not None:
+            axis.plot(
+                times,
+                identified_qpos[:, joint_index],
+                label="identified MuJoCo",
+                color="tab:green",
+                linewidth=1.2,
+                alpha=0.95,
+            )
         axis.set_title(joint_names[joint_index])
         axis.set_xlabel("Time [s]")
         axis.set_ylabel("Position")
@@ -379,14 +411,61 @@ def main() -> None:
         actuator_mode="general",
     )
     processed = _extend_piper_trajectory_if_needed(processed, model)
+    processed = apply_command_delay(processed, args.command_delay_ms * 1e-3)
 
     # Replay the complete recording from its measured initial state.
     simulated_qpos, simulated_qvel = simulate_open_loop(model, processed)
-    metrics = compute_metrics(
+    baseline_metrics = compute_metrics(
         measured_qpos=processed.measured_qpos,
         simulated_qpos=simulated_qpos,
         joint_names=processed.joint_names,
     )
+
+    identified_qpos = None
+    identified_metrics = None
+    identified_xml = None
+    if args.identified_model_xml is not None:
+        identified_xml = args.identified_model_xml.expanduser().resolve()
+        if not identified_xml.is_file():
+            raise FileNotFoundError(f"Identified model not found: {identified_xml}")
+        identified_model = mujoco.MjModel.from_xml_path(str(identified_xml))
+        identified_processed = load_processed_dataset(
+            dataset_path=dataset_path,
+            model=identified_model,
+            mujoco=mujoco,
+            actuator_mode="general",
+        )
+        identified_processed = _extend_piper_trajectory_if_needed(identified_processed, identified_model)
+        identified_processed = apply_command_delay(
+            identified_processed,
+            args.command_delay_ms * 1e-3,
+        )
+        if identified_processed.joint_names != processed.joint_names:
+            raise ValueError("Baseline and identified models have different joint order.")
+        identified_qpos, _ = simulate_open_loop(identified_model, identified_processed)
+        identified_metrics = compute_metrics(
+            measured_qpos=processed.measured_qpos,
+            simulated_qpos=identified_qpos,
+            joint_names=processed.joint_names,
+        )
+
+    plot_indices = list(range(len(processed.joint_names)))
+    if args.joints:
+        unknown = sorted(set(args.joints) - set(processed.joint_names))
+        if unknown:
+            raise ValueError(f"Unknown joints {unknown}; available joints: {processed.joint_names}")
+        plot_indices = [processed.joint_names.index(name) for name in args.joints]
+
+    selected_names = [processed.joint_names[index] for index in plot_indices]
+    selected_measured = processed.measured_qpos[:, plot_indices]
+    selected_simulated = simulated_qpos[:, plot_indices]
+    selected_identified = None if identified_qpos is None else identified_qpos[:, plot_indices]
+    selected_metrics = {
+        "baseline": compute_metrics(selected_measured, selected_simulated, selected_names),
+        "identified": None
+        if selected_identified is None
+        else compute_metrics(selected_measured, selected_identified, selected_names),
+    }
 
     # Store input provenance alongside the metrics so results can be traced back.
     metrics_payload = {
@@ -394,20 +473,29 @@ def main() -> None:
         "dataset": str(dataset_path),
         "model_xml": str(model_xml),
         "num_samples": int(processed.times.shape[0]),
-        "metrics": metrics,
+        "identified_model_xml": None if identified_xml is None else str(identified_xml),
+        "command_delay_ms": args.command_delay_ms,
+        "reported_joints": selected_names,
+        "metrics": selected_metrics,
+        "all_joint_metrics": {
+            "baseline": baseline_metrics,
+            "identified": identified_metrics,
+        },
     }
     metrics_path = output_dir / "metrics.json"
     metrics_path.write_text(json.dumps(metrics_payload, indent=2), encoding="utf-8")
     print(f"Saved metrics to {metrics_path}")
-    print(f"Mean RMSE: {metrics['rmse_mean']:.6f}")
-    print(f"Mean MAE:  {metrics['mae_mean']:.6f}")
+    print(f"Baseline mean RMSE: {selected_metrics['baseline']['rmse_mean']:.6f}")
+    if selected_metrics["identified"] is not None:
+        print(f"Identified mean RMSE: {selected_metrics['identified']['rmse_mean']:.6f}")
 
     plot_joint_trajectories(
         times=processed.times,
-        desired_qpos=processed.desired_qpos,
-        measured_qpos=processed.measured_qpos,
-        simulated_qpos=simulated_qpos,
-        joint_names=processed.joint_names,
+        desired_qpos=processed.desired_qpos[:, plot_indices],
+        measured_qpos=selected_measured,
+        simulated_qpos=selected_simulated,
+        identified_qpos=selected_identified,
+        joint_names=selected_names,
         robot=args.robot,
         dataset_path=dataset_path,
         output_path=output_dir / "joint_trajectories.png",
