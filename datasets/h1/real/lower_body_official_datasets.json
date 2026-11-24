@@ -1,0 +1,760 @@
+{
+  "schema": "h1-lower-body-official-datasets-v1",
+  "dataset_count": 41,
+  "joint_keys": [
+    "left_knee",
+    "right_knee",
+    "left_ankle",
+    "right_ankle",
+    "left_hip_pitch",
+    "right_hip_pitch",
+    "left_hip_roll",
+    "right_hip_roll",
+    "left_hip_yaw",
+    "right_hip_yaw"
+  ],
+  "selection_policy": "Only the datasets explicitly listed below are official. Hold-only diagnostics, aborted runs, obsolete arm poses, and all other raw logs are excluded from fitting and validation.",
+  "joint_names": [
+    "left_hip_yaw_joint",
+    "left_hip_roll_joint",
+    "left_hip_pitch_joint",
+    "left_knee_joint",
+    "left_ankle_joint",
+    "right_hip_yaw_joint",
+    "right_hip_roll_joint",
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_joint",
+    "torso_joint",
+    "left_shoulder_pitch_joint",
+    "left_shoulder_roll_joint",
+    "left_shoulder_yaw_joint",
+    "left_elbow_joint",
+    "right_shoulder_pitch_joint",
+    "right_shoulder_roll_joint",
+    "right_shoulder_yaw_joint",
+    "right_elbow_joint"
+  ],
+  "joint_to_motor": [
+    7,
+    3,
+    4,
+    5,
+    10,
+    8,
+    0,
+    1,
+    2,
+    11,
+    6,
+    16,
+    17,
+    18,
+    19,
+    12,
+    13,
+    14,
+    15
+  ],
+  "unused_motor_id": 9,
+  "kp": [
+    200.0,
+    200.0,
+    200.0,
+    300.0,
+    40.0,
+    200.0,
+    200.0,
+    200.0,
+    300.0,
+    40.0,
+    300.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0
+  ],
+  "kd": [
+    5.0,
+    5.0,
+    5.0,
+    6.0,
+    2.0,
+    5.0,
+    5.0,
+    5.0,
+    6.0,
+    2.0,
+    6.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0
+  ],
+  "datasets": [
+    {
+      "joint_key": "left_knee",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_knee/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_204944_left_knee_joint_sine/raw.npz",
+      "samples": 7001,
+      "duration_s": 14.0,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.00020767,
+        21.999882018
+      ]
+    },
+    {
+      "joint_key": "left_knee",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_knee/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_205441_left_knee_joint_sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001702697,
+        21.998215041
+      ]
+    },
+    {
+      "joint_key": "left_knee",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_knee/validation_positive_step_0p02.pt",
+      "source_raw": "datasets/h1/raw/20261116_204724_left_knee_joint_positive-step/raw.npz",
+      "samples": 3501,
+      "duration_s": 7.0,
+      "requested_crop_range_s": [
+        8.0,
+        15.0
+      ],
+      "actual_crop_range_s": [
+        8.000127581000001,
+        14.999480126000002
+      ]
+    },
+    {
+      "joint_key": "left_knee",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_knee/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_205144_left_knee_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.00146827,
+        21.999371354
+      ]
+    },
+    {
+      "joint_key": "right_knee",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_knee/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_211300_right_knee_joint_sine/raw.npz",
+      "samples": 7001,
+      "duration_s": 14.0,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000103031,
+        21.999961328
+      ]
+    },
+    {
+      "joint_key": "right_knee",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_knee/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_211540_right_knee_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000925705,
+        21.999347651
+      ]
+    },
+    {
+      "joint_key": "right_knee",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_knee/validation_positive_step_0p02.pt",
+      "source_raw": "datasets/h1/raw/20261116_211153_right_knee_joint_positive-step/raw.npz",
+      "samples": 3500,
+      "duration_s": 6.998,
+      "requested_crop_range_s": [
+        8.0,
+        15.0
+      ],
+      "actual_crop_range_s": [
+        8.001674303,
+        14.999501377000001
+      ]
+    },
+    {
+      "joint_key": "right_knee",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_knee/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_211419_right_knee_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001905809,
+        21.998962012
+      ]
+    },
+    {
+      "joint_key": "left_ankle",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_ankle/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_213240_left_ankle_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001005651,
+        21.999858377000002
+      ]
+    },
+    {
+      "joint_key": "left_ankle",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_ankle/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_213524_left_ankle_joint_sine/raw.npz",
+      "samples": 7001,
+      "duration_s": 14.0,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000569015,
+        21.999595436
+      ]
+    },
+    {
+      "joint_key": "left_ankle",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_ankle/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_213356_left_ankle_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000317930000001,
+        21.997969228000002
+      ]
+    },
+    {
+      "joint_key": "left_ankle",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_ankle/validation_sine_1hz_rerun_clearance.pt",
+      "source_raw": "datasets/h1/raw/20261116_220747_left_ankle_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001945444,
+        21.999361829
+      ]
+    },
+    {
+      "joint_key": "left_ankle",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_ankle/validation_step_pm0p03.pt",
+      "source_raw": "datasets/h1/raw/20261116_212921_left_ankle_joint_step/raw.npz",
+      "samples": 5000,
+      "duration_s": 9.998,
+      "requested_crop_range_s": [
+        8.0,
+        18.0
+      ],
+      "actual_crop_range_s": [
+        8.0017742,
+        17.999015379
+      ]
+    },
+    {
+      "joint_key": "right_ankle",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_ankle/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_215341_right_ankle_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000052582,
+        21.998175908
+      ]
+    },
+    {
+      "joint_key": "right_ankle",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_ankle/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_215121_right_ankle_joint_sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001656286000001,
+        21.998049559000002
+      ]
+    },
+    {
+      "joint_key": "right_ankle",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_ankle/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_215301_right_ankle_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000182999,
+        21.998083643
+      ]
+    },
+    {
+      "joint_key": "right_ankle",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_ankle/validation_step_pm0p03.pt",
+      "source_raw": "datasets/h1/raw/20261116_214530_right_ankle_joint_step/raw.npz",
+      "samples": 5000,
+      "duration_s": 9.998,
+      "requested_crop_range_s": [
+        8.0,
+        18.0
+      ],
+      "actual_crop_range_s": [
+        8.000069756,
+        17.998269741
+      ]
+    },
+    {
+      "joint_key": "left_hip_pitch",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_hip_pitch/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_221947_left_hip_pitch_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000224133,
+        21.998411152000003
+      ]
+    },
+    {
+      "joint_key": "left_hip_pitch",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_hip_pitch/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_222308_left_hip_pitch_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000223216,
+        21.998512186000003
+      ]
+    },
+    {
+      "joint_key": "left_hip_pitch",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_hip_pitch/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_222135_left_hip_pitch_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000366564,
+        21.998502502
+      ]
+    },
+    {
+      "joint_key": "left_hip_pitch",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_hip_pitch/validation_step_pm0p03.pt",
+      "source_raw": "datasets/h1/raw/20261116_221818_left_hip_pitch_joint_step/raw.npz",
+      "samples": 5000,
+      "duration_s": 9.998,
+      "requested_crop_range_s": [
+        8.0,
+        18.0
+      ],
+      "actual_crop_range_s": [
+        8.000117876000001,
+        17.998022255000002
+      ]
+    },
+    {
+      "joint_key": "right_hip_pitch",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_hip_pitch/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_222940_right_hip_pitch_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000304207000001,
+        21.998308979
+      ]
+    },
+    {
+      "joint_key": "right_hip_pitch",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_hip_pitch/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_223218_right_hip_pitch_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000221379000001,
+        21.999190909000003
+      ]
+    },
+    {
+      "joint_key": "right_hip_pitch",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_hip_pitch/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_223100_right_hip_pitch_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000138108,
+        21.998016617
+      ]
+    },
+    {
+      "joint_key": "right_hip_pitch",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_hip_pitch/validation_step_pm0p03.pt",
+      "source_raw": "datasets/h1/raw/20261116_222827_right_hip_pitch_joint_step/raw.npz",
+      "samples": 5000,
+      "duration_s": 9.998,
+      "requested_crop_range_s": [
+        8.0,
+        18.0
+      ],
+      "actual_crop_range_s": [
+        8.001703863000001,
+        17.999911378
+      ]
+    },
+    {
+      "joint_key": "left_hip_roll",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_hip_roll/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225146_left_hip_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000175976000001,
+        21.998318753000003
+      ]
+    },
+    {
+      "joint_key": "left_hip_roll",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_hip_roll/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225146_left_hip_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.000426950000005,
+        45.998697449000005
+      ]
+    },
+    {
+      "joint_key": "left_hip_roll",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_hip_roll/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225146_left_hip_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.000261632,
+        33.998445654
+      ]
+    },
+    {
+      "joint_key": "left_hip_roll",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_hip_roll/validation_step_pm0p04.pt",
+      "source_raw": "datasets/h1/raw/20261116_224804_left_hip_roll_joint_step/raw.npz",
+      "samples": 5000,
+      "duration_s": 9.998,
+      "requested_crop_range_s": [
+        8.0,
+        18.0
+      ],
+      "actual_crop_range_s": [
+        8.000104693,
+        17.99860486
+      ]
+    },
+    {
+      "joint_key": "right_hip_roll",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_hip_roll/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225359_right_hip_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001671676,
+        21.999140849
+      ]
+    },
+    {
+      "joint_key": "right_hip_roll",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_hip_roll/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225359_right_hip_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.000745747,
+        45.998300708
+      ]
+    },
+    {
+      "joint_key": "right_hip_roll",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_hip_roll/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225359_right_hip_roll_joint_multi-sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.001597704,
+        33.997854125
+      ]
+    },
+    {
+      "joint_key": "right_hip_roll",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_hip_roll/validation_step_pm0p04.pt",
+      "source_raw": "datasets/h1/raw/20261116_225322_right_hip_roll_joint_step/raw.npz",
+      "samples": 5000,
+      "duration_s": 9.998,
+      "requested_crop_range_s": [
+        8.0,
+        18.0
+      ],
+      "actual_crop_range_s": [
+        8.001562124000001,
+        17.999672971000003
+      ]
+    },
+    {
+      "joint_key": "left_hip_yaw",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_hip_yaw/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225627_left_hip_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.00119914,
+        21.999688233
+      ]
+    },
+    {
+      "joint_key": "left_hip_yaw",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_hip_yaw/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225627_left_hip_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.001545579,
+        45.999758072000006
+      ]
+    },
+    {
+      "joint_key": "left_hip_yaw",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_hip_yaw/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225627_left_hip_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.001473318000002,
+        33.999598165
+      ]
+    },
+    {
+      "joint_key": "left_hip_yaw",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_hip_yaw/validation_step_pm0p04.pt",
+      "source_raw": "datasets/h1/raw/20261116_225557_left_hip_yaw_joint_step/raw.npz",
+      "samples": 5000,
+      "duration_s": 9.998,
+      "requested_crop_range_s": [
+        8.0,
+        18.0
+      ],
+      "actual_crop_range_s": [
+        8.000497195000001,
+        17.998568854000002
+      ]
+    },
+    {
+      "joint_key": "right_hip_yaw",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_hip_yaw/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225755_right_hip_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001078746000001,
+        21.99926212
+      ]
+    },
+    {
+      "joint_key": "right_hip_yaw",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_hip_yaw/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225755_right_hip_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.001322945000005,
+        45.999347138000005
+      ]
+    },
+    {
+      "joint_key": "right_hip_yaw",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_hip_yaw/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261116_225755_right_hip_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.001001277,
+        33.999447066
+      ]
+    },
+    {
+      "joint_key": "right_hip_yaw",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_hip_yaw/validation_step_pm0p04.pt",
+      "source_raw": "datasets/h1/raw/20261116_225725_right_hip_yaw_joint_step/raw.npz",
+      "samples": 5000,
+      "duration_s": 9.998,
+      "requested_crop_range_s": [
+        8.0,
+        18.0
+      ],
+      "actual_crop_range_s": [
+        8.000293651,
+        17.998612312000002
+      ]
+    }
+  ]
+}

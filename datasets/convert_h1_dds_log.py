@@ -66,6 +66,42 @@ def _read_records(path: Path) -> list[dict[str, Any]] | dict[str, Any]:
     raise ValueError("Input must be .jsonl, .ndjson, .csv, or .npz")
 
 
+def _reject_passive_observe_log(
+    path: Path,
+    records: list[dict[str, Any]] | dict[str, Any],
+) -> None:
+    """Keep state-only Experiment 1 logs out of the SysID fitting path."""
+    command_available: bool | None = None
+    if isinstance(records, dict) and "command_available" in records:
+        value = np.asarray(records["command_available"])
+        if value.size == 1:
+            command_available = bool(value.reshape(-1)[0])
+
+    manifest_path = path.parent / "manifest.json"
+    if manifest_path.is_file():
+        manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
+        manifest_value = manifest.get("command_available")
+        if manifest_value is None:
+            manifest_value = manifest.get("experiment", {}).get("command_available")
+        if manifest_value is not None:
+            command_available = bool(manifest_value)
+
+    if command_available is False:
+        raise ValueError(
+            "Passive H1 observe log has command_available=false and cannot be "
+            "converted into a CMA-ES/SysID dataset. Run "
+            "datasets/analyze_h1_observe_log.py on it instead."
+        )
+
+    if isinstance(records, dict) and "cmd_seq" in records:
+        cmd_seq = np.asarray(records["cmd_seq"])
+        if cmd_seq.size and np.all(cmd_seq == 0):
+            raise ValueError(
+                "DDS log contains no recorded commands (cmd_seq is always zero); "
+                "it cannot be used for parameter identification."
+            )
+
+
 def _find_key(keys: set[str], canonical: str) -> str | None:
     return next((alias for alias in FIELD_ALIASES[canonical] if alias in keys), None)
 
@@ -143,6 +179,7 @@ def _resample(times: np.ndarray, values: np.ndarray, new_times: np.ndarray, zoh:
 
 def convert(args: argparse.Namespace) -> Path:
     records = _read_records(args.input)
+    _reject_passive_observe_log(args.input, records)
     raw_time = _extract(records, "timestamp")
     if raw_time is None:
         raise KeyError("DDS log has no timestamp/time field.")
@@ -178,6 +215,24 @@ def convert(args: argparse.Namespace) -> Path:
             raise ValueError(f"{name} has {values.shape[0]} samples but timestamp has {len(times)}.")
         if not np.all(np.isfinite(values)):
             raise ValueError(f"{name} contains non-finite values.")
+
+    source_start_s = float(times[0])
+    source_end_s = float(times[-1])
+    requested_start = getattr(args, "start_time_s", None)
+    requested_end = getattr(args, "end_time_s", None)
+    crop_start_s = 0.0 if requested_start is None else float(requested_start)
+    crop_end_s = source_end_s if requested_end is None else float(requested_end)
+    selection = (times >= crop_start_s) & (times <= crop_end_s)
+    if np.count_nonzero(selection) < 2:
+        raise ValueError(
+            f"Time crop [{crop_start_s}, {crop_end_s}] contains fewer than two samples "
+            f"inside source range [{source_start_s}, {source_end_s}]."
+        )
+    times = times[selection]
+    arrays = {name: values[selection] for name, values in arrays.items()}
+    actual_crop_start_s = float(times[0])
+    actual_crop_end_s = float(times[-1])
+    times = times - times[0]
 
     if len(times) > 2:
         median_dt = float(np.median(np.diff(times)))
@@ -226,6 +281,9 @@ def convert(args: argparse.Namespace) -> Path:
         "joint_to_motor": list(config.H1_JOINT_TO_MOTOR),
         "unused_motor_id": config.H1_UNUSED_MOTOR_ID,
         "source_path": str(args.input.resolve()),
+        "source_time_range_s": [source_start_s, source_end_s],
+        "requested_crop_range_s": [crop_start_s, crop_end_s],
+        "actual_crop_range_s": [actual_crop_start_s, actual_crop_end_s],
     }
     if "tau_est" in arrays:
         dataset["tau_est"] = torch.from_numpy(arrays["tau_est"])
@@ -248,11 +306,33 @@ def parse_args() -> argparse.Namespace:
         help="Reject a log when its largest timestamp gap exceeds this multiple of the median interval.",
     )
     parser.add_argument("--allow-varying-gains", action="store_true")
+    parser.add_argument(
+        "--start-time-s",
+        type=float,
+        default=None,
+        help="Optional inclusive crop start in seconds relative to the first raw sample.",
+    )
+    parser.add_argument(
+        "--end-time-s",
+        type=float,
+        default=None,
+        help="Optional inclusive crop end in seconds relative to the first raw sample.",
+    )
     args = parser.parse_args()
     if args.frequency is not None and args.frequency < 0:
         parser.error("--frequency must be nonnegative")
     if args.max_gap_factor <= 1.0:
         parser.error("--max-gap-factor must be greater than 1")
+    if args.start_time_s is not None and args.start_time_s < 0.0:
+        parser.error("--start-time-s must be nonnegative")
+    if args.end_time_s is not None and args.end_time_s <= 0.0:
+        parser.error("--end-time-s must be positive")
+    if (
+        args.start_time_s is not None
+        and args.end_time_s is not None
+        and args.end_time_s <= args.start_time_s
+    ):
+        parser.error("--end-time-s must be greater than --start-time-s")
     return args
 
 

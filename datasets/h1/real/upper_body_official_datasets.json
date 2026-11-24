@@ -1,0 +1,1336 @@
+{
+  "schema": "h1-upper-body-official-datasets-v1",
+  "dataset_count": 36,
+  "diagnostic_dataset_count": 9,
+  "joint_keys": [
+    "left_elbow",
+    "right_elbow",
+    "left_shoulder_pitch",
+    "right_shoulder_pitch",
+    "left_shoulder_roll",
+    "right_shoulder_roll",
+    "left_shoulder_yaw",
+    "right_shoulder_yaw",
+    "torso"
+  ],
+  "selection_policy": "Only the 36 datasets explicitly listed in datasets are official. The 0.5 and 2 Hz segments from each multi-sine run are fitting data. The separately recorded 1 Hz sine and the step run are independent validation data. Internal 1 Hz multi-sine segments are diagnostic only. Passive observations, aborted prepares, and superseded pilot runs are excluded.",
+  "crop_policy_s": {
+    "fit_multisine_0p5hz": [
+      8.0,
+      22.0
+    ],
+    "diagnostic_multisine_1hz": [
+      20.0,
+      34.0
+    ],
+    "fit_multisine_2hz": [
+      32.0,
+      46.0
+    ],
+    "independent_sine_1hz": [
+      8.0,
+      22.0
+    ],
+    "step": [
+      8.0,
+      24.0
+    ]
+  },
+  "joint_names": [
+    "left_hip_yaw_joint",
+    "left_hip_roll_joint",
+    "left_hip_pitch_joint",
+    "left_knee_joint",
+    "left_ankle_joint",
+    "right_hip_yaw_joint",
+    "right_hip_roll_joint",
+    "right_hip_pitch_joint",
+    "right_knee_joint",
+    "right_ankle_joint",
+    "torso_joint",
+    "left_shoulder_pitch_joint",
+    "left_shoulder_roll_joint",
+    "left_shoulder_yaw_joint",
+    "left_elbow_joint",
+    "right_shoulder_pitch_joint",
+    "right_shoulder_roll_joint",
+    "right_shoulder_yaw_joint",
+    "right_elbow_joint"
+  ],
+  "joint_to_motor": [
+    7,
+    3,
+    4,
+    5,
+    10,
+    8,
+    0,
+    1,
+    2,
+    11,
+    6,
+    16,
+    17,
+    18,
+    19,
+    12,
+    13,
+    14,
+    15
+  ],
+  "unused_motor_id": 9,
+  "kp": [
+    200.0,
+    200.0,
+    200.0,
+    300.0,
+    40.0,
+    200.0,
+    200.0,
+    200.0,
+    300.0,
+    40.0,
+    300.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0,
+    100.0
+  ],
+  "kd": [
+    5.0,
+    5.0,
+    5.0,
+    6.0,
+    2.0,
+    5.0,
+    5.0,
+    5.0,
+    6.0,
+    2.0,
+    6.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0,
+    2.0
+  ],
+  "raw_runs": [
+    {
+      "joint_key": "left_elbow",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_195340_left_elbow_joint_step/raw.npz",
+      "stats": {
+        "samples": 15509,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.017735865000002,
+        "median_state_rate_hz": 501.5196044010639,
+        "largest_state_gap_s": 0.010340939999998966
+      }
+    },
+    {
+      "joint_key": "left_elbow",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_195602_left_elbow_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26504,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.007650531,
+        "median_state_rate_hz": 501.5402300450028,
+        "largest_state_gap_s": 0.014876312999999808
+      }
+    },
+    {
+      "joint_key": "left_elbow",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_200009_left_elbow_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14504,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1449,
+        "duration_s": 29.005892022,
+        "median_state_rate_hz": 501.8928890309656,
+        "largest_state_gap_s": 0.015517990999999842
+      }
+    },
+    {
+      "joint_key": "right_elbow",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_200121_right_elbow_joint_step/raw.npz",
+      "stats": {
+        "samples": 15503,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.0068349,
+        "median_state_rate_hz": 501.9580127181136,
+        "largest_state_gap_s": 0.011471235000001911
+      }
+    },
+    {
+      "joint_key": "right_elbow",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_200302_right_elbow_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26509,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2649,
+        "duration_s": 53.017480481,
+        "median_state_rate_hz": 501.2797672457583,
+        "largest_state_gap_s": 0.017687703
+      }
+    },
+    {
+      "joint_key": "right_elbow",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_200434_right_elbow_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14507,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.011316554,
+        "median_state_rate_hz": 500.59282705497105,
+        "largest_state_gap_s": 0.015756941000000246
+      }
+    },
+    {
+      "joint_key": "left_shoulder_pitch",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_200552_left_shoulder_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 15500,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1548,
+        "duration_s": 30.998646074000003,
+        "median_state_rate_hz": 500.94126864407883,
+        "largest_state_gap_s": 0.016753993000000023
+      }
+    },
+    {
+      "joint_key": "left_shoulder_pitch",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_200731_left_shoulder_pitch_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26506,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.010959906000004,
+        "median_state_rate_hz": 501.3702448789081,
+        "largest_state_gap_s": 0.01311533900000006
+      }
+    },
+    {
+      "joint_key": "left_shoulder_pitch",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_200924_left_shoulder_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.004472114000002,
+        "median_state_rate_hz": 501.6399865259181,
+        "largest_state_gap_s": 0.010667982000000187
+      }
+    },
+    {
+      "joint_key": "right_shoulder_pitch",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_201118_right_shoulder_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 15507,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.011538238000004,
+        "median_state_rate_hz": 502.0962518512811,
+        "largest_state_gap_s": 0.009165147000000928
+      }
+    },
+    {
+      "joint_key": "right_shoulder_pitch",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_201321_right_shoulder_pitch_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26505,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.008501681000006,
+        "median_state_rate_hz": 500.24336839803476,
+        "largest_state_gap_s": 0.007036089999999717
+      }
+    },
+    {
+      "joint_key": "right_shoulder_pitch",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_201508_right_shoulder_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14506,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.01080595,
+        "median_state_rate_hz": 501.8195978618639,
+        "largest_state_gap_s": 0.023793578000002924
+      }
+    },
+    {
+      "joint_key": "left_shoulder_roll",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_201650_left_shoulder_roll_joint_step/raw.npz",
+      "stats": {
+        "samples": 15505,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.008297603000003,
+        "median_state_rate_hz": 500.53544779540323,
+        "largest_state_gap_s": 0.007073027999999759
+      }
+    },
+    {
+      "joint_key": "left_shoulder_roll",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_201833_left_shoulder_roll_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26507,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.012364847,
+        "median_state_rate_hz": 502.06398504249586,
+        "largest_state_gap_s": 0.007951614999999634
+      }
+    },
+    {
+      "joint_key": "left_shoulder_roll",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_202003_left_shoulder_roll_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14501,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.000595251000004,
+        "median_state_rate_hz": 500.25175169382015,
+        "largest_state_gap_s": 0.006071776000000195
+      }
+    },
+    {
+      "joint_key": "right_shoulder_roll",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_202221_right_shoulder_roll_joint_step/raw.npz",
+      "stats": {
+        "samples": 15508,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.013777571000002,
+        "median_state_rate_hz": 503.0150723436319,
+        "largest_state_gap_s": 0.013999693999998897
+      }
+    },
+    {
+      "joint_key": "right_shoulder_roll",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_202332_right_shoulder_roll_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26502,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2649,
+        "duration_s": 53.000866328,
+        "median_state_rate_hz": 500.9216959214001,
+        "largest_state_gap_s": 0.007770979000000011
+      }
+    },
+    {
+      "joint_key": "right_shoulder_roll",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_202545_right_shoulder_roll_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1448,
+        "duration_s": 29.005504388000002,
+        "median_state_rate_hz": 502.36324228244456,
+        "largest_state_gap_s": 0.011582498999999302
+      }
+    },
+    {
+      "joint_key": "left_shoulder_yaw",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_202707_left_shoulder_yaw_joint_step/raw.npz",
+      "stats": {
+        "samples": 15510,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.016621546000003,
+        "median_state_rate_hz": 505.74628933996496,
+        "largest_state_gap_s": 0.014173214999999573
+      }
+    },
+    {
+      "joint_key": "left_shoulder_yaw",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_202826_left_shoulder_yaw_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26500,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2649,
+        "duration_s": 52.998382869000004,
+        "median_state_rate_hz": 504.00533035989815,
+        "largest_state_gap_s": 0.009744152999999756
+      }
+    },
+    {
+      "joint_key": "left_shoulder_yaw",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_203014_left_shoulder_yaw_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14504,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.006064565000003,
+        "median_state_rate_hz": 501.2830339253588,
+        "largest_state_gap_s": 0.007143234000000831
+      }
+    },
+    {
+      "joint_key": "right_shoulder_yaw",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_203144_right_shoulder_yaw_joint_step/raw.npz",
+      "stats": {
+        "samples": 15502,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.004186614,
+        "median_state_rate_hz": 502.0629767716249,
+        "largest_state_gap_s": 0.008146614999997581
+      }
+    },
+    {
+      "joint_key": "right_shoulder_yaw",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_203253_right_shoulder_yaw_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26509,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.012958142,
+        "median_state_rate_hz": 501.58551180329783,
+        "largest_state_gap_s": 0.01634043499999649
+      }
+    },
+    {
+      "joint_key": "right_shoulder_yaw",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_203442_right_shoulder_yaw_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14506,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.0091746,
+        "median_state_rate_hz": 500.81557816919565,
+        "largest_state_gap_s": 0.016289428000000328
+      }
+    },
+    {
+      "joint_key": "torso",
+      "kind": "step",
+      "raw": "datasets/h1/raw/20261117_203609_torso_joint_step/raw.npz",
+      "stats": {
+        "samples": 15502,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.003624802,
+        "median_state_rate_hz": 502.56433451685416,
+        "largest_state_gap_s": 0.013460431999999578
+      }
+    },
+    {
+      "joint_key": "torso",
+      "kind": "multi-sine",
+      "raw": "datasets/h1/raw/20261117_203741_torso_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26509,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2649,
+        "duration_s": 53.015724471000006,
+        "median_state_rate_hz": 501.056979698639,
+        "largest_state_gap_s": 0.012794255000002863
+      }
+    },
+    {
+      "joint_key": "torso",
+      "kind": "sine",
+      "raw": "datasets/h1/raw/20261117_203947_torso_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14505,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.008229527,
+        "median_state_rate_hz": 500.20420836813537,
+        "largest_state_gap_s": 0.007723604000000606
+      }
+    }
+  ],
+  "datasets": [
+    {
+      "joint_key": "left_elbow",
+      "joint_name": "left_elbow_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_elbow/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_195602_left_elbow_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000230403,
+        21.998721279
+      ]
+    },
+    {
+      "joint_key": "left_elbow",
+      "joint_name": "left_elbow_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_elbow/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_195602_left_elbow_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.001213397,
+        45.999286099
+      ]
+    },
+    {
+      "joint_key": "left_elbow",
+      "joint_name": "left_elbow_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_elbow/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_200009_left_elbow_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.0012127,
+        21.999134243
+      ]
+    },
+    {
+      "joint_key": "left_elbow",
+      "joint_name": "left_elbow_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_elbow/validation_step_pm0p02.pt",
+      "source_raw": "datasets/h1/raw/20261117_195340_left_elbow_joint_step/raw.npz",
+      "samples": 8000,
+      "duration_s": 15.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.000529507000001,
+        23.999517423
+      ]
+    },
+    {
+      "joint_key": "right_elbow",
+      "joint_name": "right_elbow_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_elbow/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_200302_right_elbow_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.00013979,
+        21.998327786
+      ]
+    },
+    {
+      "joint_key": "right_elbow",
+      "joint_name": "right_elbow_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_elbow/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_200302_right_elbow_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.000777267000004,
+        45.999012204
+      ]
+    },
+    {
+      "joint_key": "right_elbow",
+      "joint_name": "right_elbow_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_elbow/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_200434_right_elbow_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001417252000001,
+        21.999540249000002
+      ]
+    },
+    {
+      "joint_key": "right_elbow",
+      "joint_name": "right_elbow_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_elbow/validation_step_pm0p02.pt",
+      "source_raw": "datasets/h1/raw/20261117_200121_right_elbow_joint_step/raw.npz",
+      "samples": 8000,
+      "duration_s": 15.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.000068049000001,
+        23.998458596000003
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_pitch",
+      "joint_name": "left_shoulder_pitch_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_shoulder_pitch/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_200731_left_shoulder_pitch_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001952438,
+        21.99994969
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_pitch",
+      "joint_name": "left_shoulder_pitch_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_shoulder_pitch/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_200731_left_shoulder_pitch_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.001191485,
+        45.998726136
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_pitch",
+      "joint_name": "left_shoulder_pitch_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_shoulder_pitch/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_200924_left_shoulder_pitch_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.00013319,
+        21.998350112
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_pitch",
+      "joint_name": "left_shoulder_pitch_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_shoulder_pitch/validation_step_pm0p02.pt",
+      "source_raw": "datasets/h1/raw/20261117_200552_left_shoulder_pitch_joint_step/raw.npz",
+      "samples": 7999,
+      "duration_s": 15.996,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.002193276,
+        23.998544257000002
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_pitch",
+      "joint_name": "right_shoulder_pitch_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_shoulder_pitch/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_201321_right_shoulder_pitch_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001857292,
+        21.999815403000003
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_pitch",
+      "joint_name": "right_shoulder_pitch_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_shoulder_pitch/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_201321_right_shoulder_pitch_joint_multi-sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.001804318000005,
+        45.998296189
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_pitch",
+      "joint_name": "right_shoulder_pitch_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_shoulder_pitch/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_201508_right_shoulder_pitch_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000205976,
+        21.998516145
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_pitch",
+      "joint_name": "right_shoulder_pitch_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_shoulder_pitch/validation_step_pm0p02.pt",
+      "source_raw": "datasets/h1/raw/20261117_201118_right_shoulder_pitch_joint_step/raw.npz",
+      "samples": 8000,
+      "duration_s": 15.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.001659094,
+        23.999791423
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_roll",
+      "joint_name": "left_shoulder_roll_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_shoulder_roll/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_201833_left_shoulder_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001222159000001,
+        21.999791399000003
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_roll",
+      "joint_name": "left_shoulder_roll_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_shoulder_roll/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_201833_left_shoulder_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.000284831,
+        45.998074177
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_roll",
+      "joint_name": "left_shoulder_roll_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_shoulder_roll/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_202003_left_shoulder_roll_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000153346000001,
+        21.998432862
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_roll",
+      "joint_name": "left_shoulder_roll_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_shoulder_roll/validation_step_pm0p02.pt",
+      "source_raw": "datasets/h1/raw/20261117_201650_left_shoulder_roll_joint_step/raw.npz",
+      "samples": 7999,
+      "duration_s": 15.996,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.001758884000001,
+        23.998196623000002
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_roll",
+      "joint_name": "right_shoulder_roll_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_shoulder_roll/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_202332_right_shoulder_roll_joint_multi-sine/raw.npz",
+      "samples": 7001,
+      "duration_s": 14.0,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000436623,
+        21.999657082000002
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_roll",
+      "joint_name": "right_shoulder_roll_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_shoulder_roll/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_202332_right_shoulder_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.000981538000005,
+        45.999201968
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_roll",
+      "joint_name": "right_shoulder_roll_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_shoulder_roll/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_202545_right_shoulder_roll_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001845788,
+        21.999285412000003
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_roll",
+      "joint_name": "right_shoulder_roll_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_shoulder_roll/validation_step_pm0p02.pt",
+      "source_raw": "datasets/h1/raw/20261117_202221_right_shoulder_roll_joint_step/raw.npz",
+      "samples": 8001,
+      "duration_s": 16.0,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.000240308,
+        23.999715237
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_yaw",
+      "joint_name": "left_shoulder_yaw_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_shoulder_yaw/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_202826_left_shoulder_yaw_joint_multi-sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.003394784000001,
+        21.999498605000003
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_yaw",
+      "joint_name": "left_shoulder_yaw_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/left_shoulder_yaw/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_202826_left_shoulder_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.001183188,
+        45.998598413
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_yaw",
+      "joint_name": "left_shoulder_yaw_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_shoulder_yaw/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_203014_left_shoulder_yaw_joint_sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001813836,
+        21.998174025
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_yaw",
+      "joint_name": "left_shoulder_yaw_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/left_shoulder_yaw/validation_step_pm0p04.pt",
+      "source_raw": "datasets/h1/raw/20261117_202707_left_shoulder_yaw_joint_step/raw.npz",
+      "samples": 8000,
+      "duration_s": 15.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.001202260000001,
+        23.998455076000003
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_yaw",
+      "joint_name": "right_shoulder_yaw_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_shoulder_yaw/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_203253_right_shoulder_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001443223,
+        21.999369486000003
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_yaw",
+      "joint_name": "right_shoulder_yaw_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/right_shoulder_yaw/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_203253_right_shoulder_yaw_joint_multi-sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.00170837,
+        45.998209901
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_yaw",
+      "joint_name": "right_shoulder_yaw_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_shoulder_yaw/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_203442_right_shoulder_yaw_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.001708123,
+        21.999752635
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_yaw",
+      "joint_name": "right_shoulder_yaw_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/right_shoulder_yaw/validation_step_pm0p04.pt",
+      "source_raw": "datasets/h1/raw/20261117_203144_right_shoulder_yaw_joint_step/raw.npz",
+      "samples": 7999,
+      "duration_s": 15.996,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.001967981,
+        23.997962986
+      ]
+    },
+    {
+      "joint_key": "torso",
+      "joint_name": "torso_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/torso/fit_sine_0p5hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_203741_torso_joint_multi-sine/raw.npz",
+      "samples": 7001,
+      "duration_s": 14.0,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000113059,
+        21.999874652000003
+      ]
+    },
+    {
+      "joint_key": "torso",
+      "joint_name": "torso_joint",
+      "use": "fit",
+      "dataset": "datasets/h1/real/torso/fit_sine_2hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_203741_torso_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        32.0,
+        46.0
+      ],
+      "actual_crop_range_s": [
+        32.001834233000004,
+        45.999748388
+      ]
+    },
+    {
+      "joint_key": "torso",
+      "joint_name": "torso_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/torso/validation_sine_1hz.pt",
+      "source_raw": "datasets/h1/raw/20261117_203947_torso_joint_sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        22.0
+      ],
+      "actual_crop_range_s": [
+        8.000380261,
+        21.998348684
+      ]
+    },
+    {
+      "joint_key": "torso",
+      "joint_name": "torso_joint",
+      "use": "validation",
+      "dataset": "datasets/h1/real/torso/validation_step_pm0p03.pt",
+      "source_raw": "datasets/h1/raw/20261117_203609_torso_joint_step/raw.npz",
+      "samples": 8000,
+      "duration_s": 15.998000000000001,
+      "requested_crop_range_s": [
+        8.0,
+        24.0
+      ],
+      "actual_crop_range_s": [
+        8.00116756,
+        23.999242036000002
+      ]
+    }
+  ],
+  "diagnostic_datasets": [
+    {
+      "joint_key": "left_elbow",
+      "joint_name": "left_elbow_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/left_elbow/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_195602_left_elbow_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.001780019,
+        33.999070935
+      ]
+    },
+    {
+      "joint_key": "right_elbow",
+      "joint_name": "right_elbow_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/right_elbow/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_200302_right_elbow_joint_multi-sine/raw.npz",
+      "samples": 7001,
+      "duration_s": 14.0,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.000390827,
+        33.999605042
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_pitch",
+      "joint_name": "left_shoulder_pitch_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/left_shoulder_pitch/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_200731_left_shoulder_pitch_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.001919095,
+        33.998996652
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_pitch",
+      "joint_name": "right_shoulder_pitch_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/right_shoulder_pitch/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_201321_right_shoulder_pitch_joint_multi-sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.001591429,
+        33.998305064
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_roll",
+      "joint_name": "left_shoulder_roll_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/left_shoulder_roll/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_201833_left_shoulder_roll_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.000264561,
+        33.997999735
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_roll",
+      "joint_name": "right_shoulder_roll_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/right_shoulder_roll/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_202332_right_shoulder_roll_joint_multi-sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.002276669,
+        33.998948822
+      ]
+    },
+    {
+      "joint_key": "left_shoulder_yaw",
+      "joint_name": "left_shoulder_yaw_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/left_shoulder_yaw/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_202826_left_shoulder_yaw_joint_multi-sine/raw.npz",
+      "samples": 6999,
+      "duration_s": 13.996,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.001532044,
+        33.997565110000004
+      ]
+    },
+    {
+      "joint_key": "right_shoulder_yaw",
+      "joint_name": "right_shoulder_yaw_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/right_shoulder_yaw/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_203253_right_shoulder_yaw_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.000988569,
+        33.999630776000004
+      ]
+    },
+    {
+      "joint_key": "torso",
+      "joint_name": "torso_joint",
+      "use": "diagnostic-only",
+      "reason": "Same raw multi-sine recording as the fit segments; not independent validation.",
+      "dataset": "datasets/h1/real/torso/diagnostic_multisine_1hz_internal.pt",
+      "source_raw": "datasets/h1/raw/20261117_203741_torso_joint_multi-sine/raw.npz",
+      "samples": 7000,
+      "duration_s": 13.998000000000001,
+      "requested_crop_range_s": [
+        20.0,
+        34.0
+      ],
+      "actual_crop_range_s": [
+        20.001993632,
+        33.999737601
+      ]
+    }
+  ]
+}

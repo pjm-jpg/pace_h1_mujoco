@@ -1,0 +1,3650 @@
+{
+  "schema": "h1-full-range-official-manifest-v1",
+  "selection_policy": "Only explicitly listed official small-signal datasets and project_runs are usable. For repeated or corrected experiments, the latest reviewed successful run is selected.",
+  "controller_scope": "h1_19dof_loco_real.robot gains; suspended fixed-base experiments",
+  "small_signal": {
+    "lower_manifest": "datasets/h1/real/lower_body_official_datasets.json",
+    "upper_manifest": "datasets/h1/real/upper_body_official_datasets.json",
+    "official_dataset_count": 77,
+    "diagnostic_dataset_count": 9,
+    "datasets": [
+      {
+        "joint_key": "left_knee",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_knee/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_204944_left_knee_joint_sine/raw.npz",
+        "samples": 7001,
+        "duration_s": 14.0,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.00020767,
+          21.999882018
+        ]
+      },
+      {
+        "joint_key": "left_knee",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_knee/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_205441_left_knee_joint_sine/raw.npz",
+        "samples": 6999,
+        "duration_s": 13.996,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001702697,
+          21.998215041
+        ]
+      },
+      {
+        "joint_key": "left_knee",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_knee/validation_positive_step_0p02.pt",
+        "source_raw": "datasets/h1/raw/20261116_204724_left_knee_joint_positive-step/raw.npz",
+        "samples": 3501,
+        "duration_s": 7.0,
+        "requested_crop_range_s": [
+          8.0,
+          15.0
+        ],
+        "actual_crop_range_s": [
+          8.000127581000001,
+          14.999480126000002
+        ]
+      },
+      {
+        "joint_key": "left_knee",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_knee/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_205144_left_knee_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.00146827,
+          21.999371354
+        ]
+      },
+      {
+        "joint_key": "right_knee",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_knee/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_211300_right_knee_joint_sine/raw.npz",
+        "samples": 7001,
+        "duration_s": 14.0,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000103031,
+          21.999961328
+        ]
+      },
+      {
+        "joint_key": "right_knee",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_knee/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_211540_right_knee_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000925705,
+          21.999347651
+        ]
+      },
+      {
+        "joint_key": "right_knee",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_knee/validation_positive_step_0p02.pt",
+        "source_raw": "datasets/h1/raw/20261116_211153_right_knee_joint_positive-step/raw.npz",
+        "samples": 3500,
+        "duration_s": 6.998,
+        "requested_crop_range_s": [
+          8.0,
+          15.0
+        ],
+        "actual_crop_range_s": [
+          8.001674303,
+          14.999501377000001
+        ]
+      },
+      {
+        "joint_key": "right_knee",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_knee/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_211419_right_knee_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001905809,
+          21.998962012
+        ]
+      },
+      {
+        "joint_key": "left_ankle",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_ankle/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_213240_left_ankle_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001005651,
+          21.999858377000002
+        ]
+      },
+      {
+        "joint_key": "left_ankle",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_ankle/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_213524_left_ankle_joint_sine/raw.npz",
+        "samples": 7001,
+        "duration_s": 14.0,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000569015,
+          21.999595436
+        ]
+      },
+      {
+        "joint_key": "left_ankle",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_ankle/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_213356_left_ankle_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000317930000001,
+          21.997969228000002
+        ]
+      },
+      {
+        "joint_key": "left_ankle",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_ankle/validation_sine_1hz_rerun_clearance.pt",
+        "source_raw": "datasets/h1/raw/20261116_220747_left_ankle_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001945444,
+          21.999361829
+        ]
+      },
+      {
+        "joint_key": "left_ankle",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_ankle/validation_step_pm0p03.pt",
+        "source_raw": "datasets/h1/raw/20261116_212921_left_ankle_joint_step/raw.npz",
+        "samples": 5000,
+        "duration_s": 9.998,
+        "requested_crop_range_s": [
+          8.0,
+          18.0
+        ],
+        "actual_crop_range_s": [
+          8.0017742,
+          17.999015379
+        ]
+      },
+      {
+        "joint_key": "right_ankle",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_ankle/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_215341_right_ankle_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000052582,
+          21.998175908
+        ]
+      },
+      {
+        "joint_key": "right_ankle",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_ankle/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_215121_right_ankle_joint_sine/raw.npz",
+        "samples": 6999,
+        "duration_s": 13.996,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001656286000001,
+          21.998049559000002
+        ]
+      },
+      {
+        "joint_key": "right_ankle",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_ankle/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_215301_right_ankle_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000182999,
+          21.998083643
+        ]
+      },
+      {
+        "joint_key": "right_ankle",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_ankle/validation_step_pm0p03.pt",
+        "source_raw": "datasets/h1/raw/20261116_214530_right_ankle_joint_step/raw.npz",
+        "samples": 5000,
+        "duration_s": 9.998,
+        "requested_crop_range_s": [
+          8.0,
+          18.0
+        ],
+        "actual_crop_range_s": [
+          8.000069756,
+          17.998269741
+        ]
+      },
+      {
+        "joint_key": "left_hip_pitch",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_hip_pitch/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_221947_left_hip_pitch_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000224133,
+          21.998411152000003
+        ]
+      },
+      {
+        "joint_key": "left_hip_pitch",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_hip_pitch/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_222308_left_hip_pitch_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000223216,
+          21.998512186000003
+        ]
+      },
+      {
+        "joint_key": "left_hip_pitch",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_hip_pitch/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_222135_left_hip_pitch_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000366564,
+          21.998502502
+        ]
+      },
+      {
+        "joint_key": "left_hip_pitch",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_hip_pitch/validation_step_pm0p03.pt",
+        "source_raw": "datasets/h1/raw/20261116_221818_left_hip_pitch_joint_step/raw.npz",
+        "samples": 5000,
+        "duration_s": 9.998,
+        "requested_crop_range_s": [
+          8.0,
+          18.0
+        ],
+        "actual_crop_range_s": [
+          8.000117876000001,
+          17.998022255000002
+        ]
+      },
+      {
+        "joint_key": "right_hip_pitch",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_hip_pitch/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_222940_right_hip_pitch_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000304207000001,
+          21.998308979
+        ]
+      },
+      {
+        "joint_key": "right_hip_pitch",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_hip_pitch/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_223218_right_hip_pitch_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000221379000001,
+          21.999190909000003
+        ]
+      },
+      {
+        "joint_key": "right_hip_pitch",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_hip_pitch/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_223100_right_hip_pitch_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000138108,
+          21.998016617
+        ]
+      },
+      {
+        "joint_key": "right_hip_pitch",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_hip_pitch/validation_step_pm0p03.pt",
+        "source_raw": "datasets/h1/raw/20261116_222827_right_hip_pitch_joint_step/raw.npz",
+        "samples": 5000,
+        "duration_s": 9.998,
+        "requested_crop_range_s": [
+          8.0,
+          18.0
+        ],
+        "actual_crop_range_s": [
+          8.001703863000001,
+          17.999911378
+        ]
+      },
+      {
+        "joint_key": "left_hip_roll",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_hip_roll/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225146_left_hip_roll_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000175976000001,
+          21.998318753000003
+        ]
+      },
+      {
+        "joint_key": "left_hip_roll",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_hip_roll/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225146_left_hip_roll_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.000426950000005,
+          45.998697449000005
+        ]
+      },
+      {
+        "joint_key": "left_hip_roll",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_hip_roll/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225146_left_hip_roll_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          20.0,
+          34.0
+        ],
+        "actual_crop_range_s": [
+          20.000261632,
+          33.998445654
+        ]
+      },
+      {
+        "joint_key": "left_hip_roll",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_hip_roll/validation_step_pm0p04.pt",
+        "source_raw": "datasets/h1/raw/20261116_224804_left_hip_roll_joint_step/raw.npz",
+        "samples": 5000,
+        "duration_s": 9.998,
+        "requested_crop_range_s": [
+          8.0,
+          18.0
+        ],
+        "actual_crop_range_s": [
+          8.000104693,
+          17.99860486
+        ]
+      },
+      {
+        "joint_key": "right_hip_roll",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_hip_roll/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225359_right_hip_roll_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001671676,
+          21.999140849
+        ]
+      },
+      {
+        "joint_key": "right_hip_roll",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_hip_roll/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225359_right_hip_roll_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.000745747,
+          45.998300708
+        ]
+      },
+      {
+        "joint_key": "right_hip_roll",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_hip_roll/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225359_right_hip_roll_joint_multi-sine/raw.npz",
+        "samples": 6999,
+        "duration_s": 13.996,
+        "requested_crop_range_s": [
+          20.0,
+          34.0
+        ],
+        "actual_crop_range_s": [
+          20.001597704,
+          33.997854125
+        ]
+      },
+      {
+        "joint_key": "right_hip_roll",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_hip_roll/validation_step_pm0p04.pt",
+        "source_raw": "datasets/h1/raw/20261116_225322_right_hip_roll_joint_step/raw.npz",
+        "samples": 5000,
+        "duration_s": 9.998,
+        "requested_crop_range_s": [
+          8.0,
+          18.0
+        ],
+        "actual_crop_range_s": [
+          8.001562124000001,
+          17.999672971000003
+        ]
+      },
+      {
+        "joint_key": "left_hip_yaw",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_hip_yaw/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225627_left_hip_yaw_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.00119914,
+          21.999688233
+        ]
+      },
+      {
+        "joint_key": "left_hip_yaw",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_hip_yaw/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225627_left_hip_yaw_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.001545579,
+          45.999758072000006
+        ]
+      },
+      {
+        "joint_key": "left_hip_yaw",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_hip_yaw/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225627_left_hip_yaw_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          20.0,
+          34.0
+        ],
+        "actual_crop_range_s": [
+          20.001473318000002,
+          33.999598165
+        ]
+      },
+      {
+        "joint_key": "left_hip_yaw",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_hip_yaw/validation_step_pm0p04.pt",
+        "source_raw": "datasets/h1/raw/20261116_225557_left_hip_yaw_joint_step/raw.npz",
+        "samples": 5000,
+        "duration_s": 9.998,
+        "requested_crop_range_s": [
+          8.0,
+          18.0
+        ],
+        "actual_crop_range_s": [
+          8.000497195000001,
+          17.998568854000002
+        ]
+      },
+      {
+        "joint_key": "right_hip_yaw",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_hip_yaw/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225755_right_hip_yaw_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001078746000001,
+          21.99926212
+        ]
+      },
+      {
+        "joint_key": "right_hip_yaw",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_hip_yaw/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225755_right_hip_yaw_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.001322945000005,
+          45.999347138000005
+        ]
+      },
+      {
+        "joint_key": "right_hip_yaw",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_hip_yaw/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261116_225755_right_hip_yaw_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          20.0,
+          34.0
+        ],
+        "actual_crop_range_s": [
+          20.001001277,
+          33.999447066
+        ]
+      },
+      {
+        "joint_key": "right_hip_yaw",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_hip_yaw/validation_step_pm0p04.pt",
+        "source_raw": "datasets/h1/raw/20261116_225725_right_hip_yaw_joint_step/raw.npz",
+        "samples": 5000,
+        "duration_s": 9.998,
+        "requested_crop_range_s": [
+          8.0,
+          18.0
+        ],
+        "actual_crop_range_s": [
+          8.000293651,
+          17.998612312000002
+        ]
+      },
+      {
+        "joint_key": "left_elbow",
+        "joint_name": "left_elbow_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_elbow/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_195602_left_elbow_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000230403,
+          21.998721279
+        ]
+      },
+      {
+        "joint_key": "left_elbow",
+        "joint_name": "left_elbow_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_elbow/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_195602_left_elbow_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.001213397,
+          45.999286099
+        ]
+      },
+      {
+        "joint_key": "left_elbow",
+        "joint_name": "left_elbow_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_elbow/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_200009_left_elbow_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.0012127,
+          21.999134243
+        ]
+      },
+      {
+        "joint_key": "left_elbow",
+        "joint_name": "left_elbow_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_elbow/validation_step_pm0p02.pt",
+        "source_raw": "datasets/h1/raw/20261117_195340_left_elbow_joint_step/raw.npz",
+        "samples": 8000,
+        "duration_s": 15.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.000529507000001,
+          23.999517423
+        ]
+      },
+      {
+        "joint_key": "right_elbow",
+        "joint_name": "right_elbow_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_elbow/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_200302_right_elbow_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.00013979,
+          21.998327786
+        ]
+      },
+      {
+        "joint_key": "right_elbow",
+        "joint_name": "right_elbow_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_elbow/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_200302_right_elbow_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.000777267000004,
+          45.999012204
+        ]
+      },
+      {
+        "joint_key": "right_elbow",
+        "joint_name": "right_elbow_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_elbow/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_200434_right_elbow_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001417252000001,
+          21.999540249000002
+        ]
+      },
+      {
+        "joint_key": "right_elbow",
+        "joint_name": "right_elbow_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_elbow/validation_step_pm0p02.pt",
+        "source_raw": "datasets/h1/raw/20261117_200121_right_elbow_joint_step/raw.npz",
+        "samples": 8000,
+        "duration_s": 15.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.000068049000001,
+          23.998458596000003
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_pitch",
+        "joint_name": "left_shoulder_pitch_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_shoulder_pitch/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_200731_left_shoulder_pitch_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001952438,
+          21.99994969
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_pitch",
+        "joint_name": "left_shoulder_pitch_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_shoulder_pitch/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_200731_left_shoulder_pitch_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.001191485,
+          45.998726136
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_pitch",
+        "joint_name": "left_shoulder_pitch_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_shoulder_pitch/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_200924_left_shoulder_pitch_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.00013319,
+          21.998350112
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_pitch",
+        "joint_name": "left_shoulder_pitch_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_shoulder_pitch/validation_step_pm0p02.pt",
+        "source_raw": "datasets/h1/raw/20261117_200552_left_shoulder_pitch_joint_step/raw.npz",
+        "samples": 7999,
+        "duration_s": 15.996,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.002193276,
+          23.998544257000002
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_pitch",
+        "joint_name": "right_shoulder_pitch_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_shoulder_pitch/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_201321_right_shoulder_pitch_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001857292,
+          21.999815403000003
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_pitch",
+        "joint_name": "right_shoulder_pitch_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_shoulder_pitch/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_201321_right_shoulder_pitch_joint_multi-sine/raw.npz",
+        "samples": 6999,
+        "duration_s": 13.996,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.001804318000005,
+          45.998296189
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_pitch",
+        "joint_name": "right_shoulder_pitch_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_shoulder_pitch/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_201508_right_shoulder_pitch_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000205976,
+          21.998516145
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_pitch",
+        "joint_name": "right_shoulder_pitch_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_shoulder_pitch/validation_step_pm0p02.pt",
+        "source_raw": "datasets/h1/raw/20261117_201118_right_shoulder_pitch_joint_step/raw.npz",
+        "samples": 8000,
+        "duration_s": 15.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.001659094,
+          23.999791423
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_roll",
+        "joint_name": "left_shoulder_roll_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_shoulder_roll/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_201833_left_shoulder_roll_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001222159000001,
+          21.999791399000003
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_roll",
+        "joint_name": "left_shoulder_roll_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_shoulder_roll/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_201833_left_shoulder_roll_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.000284831,
+          45.998074177
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_roll",
+        "joint_name": "left_shoulder_roll_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_shoulder_roll/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_202003_left_shoulder_roll_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000153346000001,
+          21.998432862
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_roll",
+        "joint_name": "left_shoulder_roll_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_shoulder_roll/validation_step_pm0p02.pt",
+        "source_raw": "datasets/h1/raw/20261117_201650_left_shoulder_roll_joint_step/raw.npz",
+        "samples": 7999,
+        "duration_s": 15.996,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.001758884000001,
+          23.998196623000002
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_roll",
+        "joint_name": "right_shoulder_roll_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_shoulder_roll/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_202332_right_shoulder_roll_joint_multi-sine/raw.npz",
+        "samples": 7001,
+        "duration_s": 14.0,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000436623,
+          21.999657082000002
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_roll",
+        "joint_name": "right_shoulder_roll_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_shoulder_roll/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_202332_right_shoulder_roll_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.000981538000005,
+          45.999201968
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_roll",
+        "joint_name": "right_shoulder_roll_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_shoulder_roll/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_202545_right_shoulder_roll_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001845788,
+          21.999285412000003
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_roll",
+        "joint_name": "right_shoulder_roll_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_shoulder_roll/validation_step_pm0p02.pt",
+        "source_raw": "datasets/h1/raw/20261117_202221_right_shoulder_roll_joint_step/raw.npz",
+        "samples": 8001,
+        "duration_s": 16.0,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.000240308,
+          23.999715237
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_yaw",
+        "joint_name": "left_shoulder_yaw_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_shoulder_yaw/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_202826_left_shoulder_yaw_joint_multi-sine/raw.npz",
+        "samples": 6999,
+        "duration_s": 13.996,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.003394784000001,
+          21.999498605000003
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_yaw",
+        "joint_name": "left_shoulder_yaw_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/left_shoulder_yaw/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_202826_left_shoulder_yaw_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.001183188,
+          45.998598413
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_yaw",
+        "joint_name": "left_shoulder_yaw_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_shoulder_yaw/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_203014_left_shoulder_yaw_joint_sine/raw.npz",
+        "samples": 6999,
+        "duration_s": 13.996,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001813836,
+          21.998174025
+        ]
+      },
+      {
+        "joint_key": "left_shoulder_yaw",
+        "joint_name": "left_shoulder_yaw_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/left_shoulder_yaw/validation_step_pm0p04.pt",
+        "source_raw": "datasets/h1/raw/20261117_202707_left_shoulder_yaw_joint_step/raw.npz",
+        "samples": 8000,
+        "duration_s": 15.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.001202260000001,
+          23.998455076000003
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_yaw",
+        "joint_name": "right_shoulder_yaw_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_shoulder_yaw/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_203253_right_shoulder_yaw_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001443223,
+          21.999369486000003
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_yaw",
+        "joint_name": "right_shoulder_yaw_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/right_shoulder_yaw/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_203253_right_shoulder_yaw_joint_multi-sine/raw.npz",
+        "samples": 6999,
+        "duration_s": 13.996,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.00170837,
+          45.998209901
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_yaw",
+        "joint_name": "right_shoulder_yaw_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_shoulder_yaw/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_203442_right_shoulder_yaw_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.001708123,
+          21.999752635
+        ]
+      },
+      {
+        "joint_key": "right_shoulder_yaw",
+        "joint_name": "right_shoulder_yaw_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/right_shoulder_yaw/validation_step_pm0p04.pt",
+        "source_raw": "datasets/h1/raw/20261117_203144_right_shoulder_yaw_joint_step/raw.npz",
+        "samples": 7999,
+        "duration_s": 15.996,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.001967981,
+          23.997962986
+        ]
+      },
+      {
+        "joint_key": "torso",
+        "joint_name": "torso_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/torso/fit_sine_0p5hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_203741_torso_joint_multi-sine/raw.npz",
+        "samples": 7001,
+        "duration_s": 14.0,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000113059,
+          21.999874652000003
+        ]
+      },
+      {
+        "joint_key": "torso",
+        "joint_name": "torso_joint",
+        "use": "fit",
+        "dataset": "datasets/h1/real/torso/fit_sine_2hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_203741_torso_joint_multi-sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          32.0,
+          46.0
+        ],
+        "actual_crop_range_s": [
+          32.001834233000004,
+          45.999748388
+        ]
+      },
+      {
+        "joint_key": "torso",
+        "joint_name": "torso_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/torso/validation_sine_1hz.pt",
+        "source_raw": "datasets/h1/raw/20261117_203947_torso_joint_sine/raw.npz",
+        "samples": 7000,
+        "duration_s": 13.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          22.0
+        ],
+        "actual_crop_range_s": [
+          8.000380261,
+          21.998348684
+        ]
+      },
+      {
+        "joint_key": "torso",
+        "joint_name": "torso_joint",
+        "use": "validation",
+        "dataset": "datasets/h1/real/torso/validation_step_pm0p03.pt",
+        "source_raw": "datasets/h1/raw/20261117_203609_torso_joint_step/raw.npz",
+        "samples": 8000,
+        "duration_s": 15.998000000000001,
+        "requested_crop_range_s": [
+          8.0,
+          24.0
+        ],
+        "actual_crop_range_s": [
+          8.00116756,
+          23.999242036000002
+        ]
+      }
+    ]
+  },
+  "project_runs": [
+    {
+      "run": "20261120_152448_h1_walk1_lower_body_amp0.60_speed0.50",
+      "role": "fit",
+      "raw": "datasets/h1/raw/20261120_152448_h1_walk1_lower_body_amp0.60_speed0.50/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_152448_h1_walk1_lower_body_amp0.60_speed0.50.pt",
+      "profile": "lower-body",
+      "motion_npz": "/home/pjm/Desktop/holosoma/src/holosoma/holosoma/data/motions/walk1_subject1_mj_fps50.npz",
+      "amplitude_scale": 0.6,
+      "speed_scale": 0.5,
+      "active_joints": [
+        "left_hip_yaw_joint",
+        "left_hip_roll_joint",
+        "left_hip_pitch_joint",
+        "left_knee_joint",
+        "left_ankle_joint",
+        "right_hip_yaw_joint",
+        "right_hip_roll_joint",
+        "right_hip_pitch_joint",
+        "right_knee_joint",
+        "right_ankle_joint"
+      ],
+      "crop_range_s": [
+        20.0,
+        43.16
+      ],
+      "stats": {
+        "samples": 32081,
+        "capacity": 41396,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3207,
+        "duration_s": 64.160905736,
+        "median_state_rate_hz": 501.03501307918674,
+        "largest_state_gap_s": 0.006711873000000423
+      }
+    },
+    {
+      "run": "20261120_152657_h1_walk1_lower_body_amp0.75_speed0.50",
+      "role": "validation",
+      "raw": "datasets/h1/raw/20261120_152657_h1_walk1_lower_body_amp0.75_speed0.50/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_152657_h1_walk1_lower_body_amp0.75_speed0.50.pt",
+      "profile": "lower-body",
+      "motion_npz": "/home/pjm/Desktop/holosoma/src/holosoma/holosoma/data/motions/walk1_subject1_mj_fps50.npz",
+      "amplitude_scale": 0.75,
+      "speed_scale": 0.5,
+      "active_joints": [
+        "left_hip_yaw_joint",
+        "left_hip_roll_joint",
+        "left_hip_pitch_joint",
+        "left_knee_joint",
+        "left_ankle_joint",
+        "right_hip_yaw_joint",
+        "right_hip_roll_joint",
+        "right_hip_pitch_joint",
+        "right_knee_joint",
+        "right_ankle_joint"
+      ],
+      "crop_range_s": [
+        20.0,
+        43.16
+      ],
+      "stats": {
+        "samples": 32090,
+        "capacity": 41396,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3208,
+        "duration_s": 64.178217851,
+        "median_state_rate_hz": 500.7664230103958,
+        "largest_state_gap_s": 0.006403789
+      }
+    },
+    {
+      "run": "20261120_152849_h1_walk1_lower_body_amp0.90_speed0.50",
+      "role": "validation",
+      "raw": "datasets/h1/raw/20261120_152849_h1_walk1_lower_body_amp0.90_speed0.50/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_152849_h1_walk1_lower_body_amp0.90_speed0.50.pt",
+      "profile": "lower-body",
+      "motion_npz": "/home/pjm/Desktop/holosoma/src/holosoma/holosoma/data/motions/walk1_subject1_mj_fps50.npz",
+      "amplitude_scale": 0.9,
+      "speed_scale": 0.5,
+      "active_joints": [
+        "left_hip_yaw_joint",
+        "left_hip_roll_joint",
+        "left_hip_pitch_joint",
+        "left_knee_joint",
+        "left_ankle_joint",
+        "right_hip_yaw_joint",
+        "right_hip_roll_joint",
+        "right_hip_pitch_joint",
+        "right_knee_joint",
+        "right_ankle_joint"
+      ],
+      "crop_range_s": [
+        20.0,
+        43.16
+      ],
+      "stats": {
+        "samples": 32084,
+        "capacity": 41396,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3204,
+        "duration_s": 64.166834014,
+        "median_state_rate_hz": 500.73407615706617,
+        "largest_state_gap_s": 0.009682842000000136
+      }
+    },
+    {
+      "run": "20261120_154112_h1_sub3_largebox_003_upper_body_amp0.60_speed0.50",
+      "role": "fit",
+      "raw": "datasets/h1/raw/20261120_154112_h1_sub3_largebox_003_upper_body_amp0.60_speed0.50/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_154112_h1_sub3_largebox_003_upper_body_amp0.60_speed0.50.pt",
+      "profile": "upper-body",
+      "motion_npz": "/home/pjm/Desktop/holosoma/src/holosoma_retargeting/holosoma_retargeting/converted_res/h1/robot_only/sub3_largebox_003_mj_fps50.npz",
+      "amplitude_scale": 0.6,
+      "speed_scale": 0.5,
+      "active_joints": [
+        "left_shoulder_pitch_joint",
+        "left_shoulder_roll_joint",
+        "left_shoulder_yaw_joint",
+        "left_elbow_joint",
+        "right_shoulder_pitch_joint",
+        "right_shoulder_roll_joint",
+        "right_shoulder_yaw_joint",
+        "right_elbow_joint"
+      ],
+      "crop_range_s": [
+        26.0,
+        38.96
+      ],
+      "stats": {
+        "samples": 32985,
+        "capacity": 42477,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3298,
+        "duration_s": 65.967210511,
+        "median_state_rate_hz": 499.786716018659,
+        "largest_state_gap_s": 0.0080841009999979
+      }
+    },
+    {
+      "run": "20261120_154411_h1_sub3_largebox_003_upper_body_amp0.90_speed0.30",
+      "role": "validation",
+      "raw": "datasets/h1/raw/20261120_154411_h1_sub3_largebox_003_upper_body_amp0.90_speed0.30/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_154411_h1_sub3_largebox_003_upper_body_amp0.90_speed0.30.pt",
+      "profile": "upper-body",
+      "motion_npz": "/home/pjm/Desktop/holosoma/src/holosoma_retargeting/holosoma_retargeting/converted_res/h1/robot_only/sub3_largebox_003_mj_fps50.npz",
+      "amplitude_scale": 0.9,
+      "speed_scale": 0.3,
+      "active_joints": [
+        "left_shoulder_pitch_joint",
+        "left_shoulder_roll_joint",
+        "left_shoulder_yaw_joint",
+        "left_elbow_joint",
+        "right_shoulder_pitch_joint",
+        "right_shoulder_roll_joint",
+        "right_shoulder_yaw_joint",
+        "right_elbow_joint"
+      ],
+      "crop_range_s": [
+        26.0,
+        47.6
+      ],
+      "stats": {
+        "samples": 37304,
+        "capacity": 47660,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3730,
+        "duration_s": 74.60612270200001,
+        "median_state_rate_hz": 500.1415400527199,
+        "largest_state_gap_s": 0.008302375000000417
+      }
+    },
+    {
+      "run": "20261120_155247_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.50",
+      "role": "fit",
+      "raw": "datasets/h1/raw/20261120_155247_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.50/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_155247_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.50.pt",
+      "profile": "upper-body",
+      "motion_npz": "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/datasets/h1/motions/h1_upper_yaw_elbow_excitation_mj_fps50.npz",
+      "amplitude_scale": 0.6,
+      "speed_scale": 0.5,
+      "active_joints": [
+        "left_shoulder_pitch_joint",
+        "left_shoulder_roll_joint",
+        "left_shoulder_yaw_joint",
+        "left_elbow_joint",
+        "right_shoulder_pitch_joint",
+        "right_shoulder_roll_joint",
+        "right_shoulder_yaw_joint",
+        "right_elbow_joint"
+      ],
+      "crop_range_s": [
+        26.0,
+        82.0
+      ],
+      "stats": {
+        "samples": 54507,
+        "capacity": 68300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 5449,
+        "duration_s": 109.01213304000001,
+        "median_state_rate_hz": 500.99347005126964,
+        "largest_state_gap_s": 0.010146364000000574
+      }
+    },
+    {
+      "run": "20261120_155811_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.90_speed0.50",
+      "role": "validation",
+      "raw": "datasets/h1/raw/20261120_155811_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.90_speed0.50/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_155811_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.90_speed0.50.pt",
+      "profile": "upper-body",
+      "motion_npz": "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/datasets/h1/motions/h1_upper_yaw_elbow_excitation_mj_fps50.npz",
+      "amplitude_scale": 0.9,
+      "speed_scale": 0.5,
+      "active_joints": [
+        "left_shoulder_pitch_joint",
+        "left_shoulder_roll_joint",
+        "left_shoulder_yaw_joint",
+        "left_elbow_joint",
+        "right_shoulder_pitch_joint",
+        "right_shoulder_roll_joint",
+        "right_shoulder_yaw_joint",
+        "right_elbow_joint"
+      ],
+      "crop_range_s": [
+        26.0,
+        82.0
+      ],
+      "stats": {
+        "samples": 54504,
+        "capacity": 68300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 5447,
+        "duration_s": 109.00684435500001,
+        "median_state_rate_hz": 501.5515497194162,
+        "largest_state_gap_s": 0.008514730000001691
+      }
+    },
+    {
+      "run": "20261120_161005_h1_h1_torso_large_torso_only_amp0.60_speed0.50",
+      "role": "fit",
+      "raw": "datasets/h1/raw/20261120_161005_h1_h1_torso_large_torso_only_amp0.60_speed0.50/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_161005_h1_h1_torso_large_torso_only_amp0.60_speed0.50.pt",
+      "profile": "torso-only",
+      "motion_npz": "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/datasets/h1/motions/h1_torso_large_mj_fps50.npz",
+      "amplitude_scale": 0.6,
+      "speed_scale": 0.5,
+      "active_joints": [
+        "torso_joint"
+      ],
+      "crop_range_s": [
+        26.0,
+        82.0
+      ],
+      "stats": {
+        "samples": 54506,
+        "capacity": 68300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 5446,
+        "duration_s": 109.009527894,
+        "median_state_rate_hz": 503.6656788106629,
+        "largest_state_gap_s": 0.008490945999994892
+      }
+    },
+    {
+      "run": "20261120_161326_h1_h1_torso_large_torso_only_amp0.90_speed0.50",
+      "role": "validation",
+      "raw": "datasets/h1/raw/20261120_161326_h1_h1_torso_large_torso_only_amp0.90_speed0.50/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_161326_h1_h1_torso_large_torso_only_amp0.90_speed0.50.pt",
+      "profile": "torso-only",
+      "motion_npz": "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/datasets/h1/motions/h1_torso_large_mj_fps50.npz",
+      "amplitude_scale": 0.9,
+      "speed_scale": 0.5,
+      "active_joints": [
+        "torso_joint"
+      ],
+      "crop_range_s": [
+        26.0,
+        82.0
+      ],
+      "stats": {
+        "samples": 54502,
+        "capacity": 68300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 5438,
+        "duration_s": 109.00275620100001,
+        "median_state_rate_hz": 503.77376930608034,
+        "largest_state_gap_s": 0.015115506000000778
+      }
+    },
+    {
+      "run": "20261120_161757_h1_walk1_subject1_lower_body_amp0.75_speed0.40",
+      "role": "blind",
+      "raw": "datasets/h1/raw/20261120_161757_h1_walk1_subject1_lower_body_amp0.75_speed0.40/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_161757_h1_walk1_subject1_lower_body_amp0.75_speed0.40.pt",
+      "profile": "lower-body",
+      "motion_npz": "/home/pjm/Desktop/holosoma/src/holosoma/holosoma/data/motions/walk1_subject1_mj_fps50.npz",
+      "amplitude_scale": 0.75,
+      "speed_scale": 0.4,
+      "active_joints": [
+        "left_hip_yaw_joint",
+        "left_hip_roll_joint",
+        "left_hip_pitch_joint",
+        "left_knee_joint",
+        "left_ankle_joint",
+        "right_hip_yaw_joint",
+        "right_hip_roll_joint",
+        "right_hip_pitch_joint",
+        "right_knee_joint",
+        "right_ankle_joint"
+      ],
+      "crop_range_s": [
+        20.0,
+        48.95
+      ],
+      "stats": {
+        "samples": 34982,
+        "capacity": 44870,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3491,
+        "duration_s": 69.96211200500001,
+        "median_state_rate_hz": 502.2740457431702,
+        "largest_state_gap_s": 0.01682967800000057
+      }
+    },
+    {
+      "run": "20261120_162020_h1_sub3_largebox_003_upper_body_amp0.60_speed0.30",
+      "role": "blind",
+      "raw": "datasets/h1/raw/20261120_162020_h1_sub3_largebox_003_upper_body_amp0.60_speed0.30/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_162020_h1_sub3_largebox_003_upper_body_amp0.60_speed0.30.pt",
+      "profile": "upper-body",
+      "motion_npz": "/home/pjm/Desktop/holosoma/src/holosoma_retargeting/holosoma_retargeting/converted_res/h1/robot_only/sub3_largebox_003_mj_fps50.npz",
+      "amplitude_scale": 0.6,
+      "speed_scale": 0.3,
+      "active_joints": [
+        "left_shoulder_pitch_joint",
+        "left_shoulder_roll_joint",
+        "left_shoulder_yaw_joint",
+        "left_elbow_joint",
+        "right_shoulder_pitch_joint",
+        "right_shoulder_roll_joint",
+        "right_shoulder_yaw_joint",
+        "right_elbow_joint"
+      ],
+      "crop_range_s": [
+        26.0,
+        47.6
+      ],
+      "stats": {
+        "samples": 37309,
+        "capacity": 47660,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3730,
+        "duration_s": 74.616059194,
+        "median_state_rate_hz": 501.48150172640135,
+        "largest_state_gap_s": 0.015258298999999198
+      }
+    },
+    {
+      "run": "20261120_163031_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.75",
+      "role": "blind",
+      "raw": "datasets/h1/raw/20261120_163031_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.75/raw.npz",
+      "dataset": "datasets/h1/real/project_motion/20261120_163031_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.75.pt",
+      "profile": "upper-body",
+      "motion_npz": "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/datasets/h1/motions/h1_upper_yaw_elbow_excitation_mj_fps50.npz",
+      "amplitude_scale": 0.6,
+      "speed_scale": 0.75,
+      "active_joints": [
+        "left_shoulder_pitch_joint",
+        "left_shoulder_roll_joint",
+        "left_shoulder_yaw_joint",
+        "left_elbow_joint",
+        "right_shoulder_pitch_joint",
+        "right_shoulder_roll_joint",
+        "right_shoulder_yaw_joint",
+        "right_elbow_joint"
+      ],
+      "crop_range_s": [
+        26.0,
+        63.333333333333336
+      ],
+      "stats": {
+        "samples": 45171,
+        "capacity": 57101,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 4516,
+        "duration_s": 90.339363887,
+        "median_state_rate_hz": 500.4879757767362,
+        "largest_state_gap_s": 0.00685106900000676
+      }
+    }
+  ],
+  "raw_inventory_counts": {
+    "excluded_diagnostic": 12,
+    "excluded_aborted": 6,
+    "excluded_superseded_or_unreviewed": 18,
+    "selected_small_signal": 60,
+    "selected_project_motion": 12
+  },
+  "raw_inventory": [
+    {
+      "run": "20261116_195313_h1_observe",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261116_195313_h1_observe/raw.npz",
+      "stats": {
+        "samples": 5006,
+        "capacity": 9500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 0,
+        "duration_s": 10.010031664000001,
+        "median_state_rate_hz": 499.6614793477463,
+        "largest_state_gap_s": 0.00283981500000019
+      }
+    },
+    {
+      "run": "20261116_195710_left_knee_joint_hold",
+      "result": "aborted",
+      "classification": "excluded_aborted",
+      "reason": "RuntimeError: Motor communication-loss counters changed: {1: [970, 975]}.",
+      "raw": "datasets/h1/raw/20261116_195710_left_knee_joint_hold/raw.npz",
+      "stats": {
+        "samples": 4433,
+        "capacity": 8900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 443,
+        "duration_s": 8.863543613000001,
+        "median_state_rate_hz": 499.6499951783187,
+        "largest_state_gap_s": 0.004875425999999905
+      }
+    },
+    {
+      "run": "20261116_195901_h1_observe",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261116_195901_h1_observe/raw.npz",
+      "stats": {
+        "samples": 30010,
+        "capacity": 39500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 0,
+        "duration_s": 60.015204207000004,
+        "median_state_rate_hz": 499.73913617002967,
+        "largest_state_gap_s": 0.00343939599999743
+      }
+    },
+    {
+      "run": "20261116_200350_left_knee_joint_hold",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261116_200350_left_knee_joint_hold/raw.npz",
+      "stats": {
+        "samples": 5006,
+        "capacity": 8900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 500,
+        "duration_s": 10.00855523,
+        "median_state_rate_hz": 499.25486211829224,
+        "largest_state_gap_s": 0.0053458309999996345
+      }
+    },
+    {
+      "run": "20261116_200751_left_knee_joint_hold",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261116_200751_left_knee_joint_hold/raw.npz",
+      "stats": {
+        "samples": 5005,
+        "capacity": 8900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 500,
+        "duration_s": 10.006948555000001,
+        "median_state_rate_hz": 498.56612382774006,
+        "largest_state_gap_s": 0.005962274999999906
+      }
+    },
+    {
+      "run": "20261116_201651_left_knee_joint_positive-step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_201651_left_knee_joint_positive-step/raw.npz",
+      "stats": {
+        "samples": 5500,
+        "capacity": 9500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 550,
+        "duration_s": 11.001939456,
+        "median_state_rate_hz": 499.1237881898709,
+        "largest_state_gap_s": 0.008574234000000125
+      }
+    },
+    {
+      "run": "20261116_202527_left_knee_joint_hold",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261116_202527_left_knee_joint_hold/raw.npz",
+      "stats": {
+        "samples": 5004,
+        "capacity": 8900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 500,
+        "duration_s": 10.005287576,
+        "median_state_rate_hz": 499.368548470493,
+        "largest_state_gap_s": 0.004902018999999758
+      }
+    },
+    {
+      "run": "20261116_202617_left_knee_joint_positive-step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_202617_left_knee_joint_positive-step/raw.npz",
+      "stats": {
+        "samples": 5504,
+        "capacity": 9500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 550,
+        "duration_s": 11.004526727,
+        "median_state_rate_hz": 499.9815006844423,
+        "largest_state_gap_s": 0.005021056000000357
+      }
+    },
+    {
+      "run": "20261116_202852_left_knee_joint_negative-step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_202852_left_knee_joint_negative-step/raw.npz",
+      "stats": {
+        "samples": 5502,
+        "capacity": 9500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 550,
+        "duration_s": 11.000719462000001,
+        "median_state_rate_hz": 499.7568682837144,
+        "largest_state_gap_s": 0.005182349000000003
+      }
+    },
+    {
+      "run": "20261116_204017_h1_prepare",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261116_204017_h1_prepare/raw.npz",
+      "stats": {
+        "samples": 7505,
+        "capacity": 11900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 750,
+        "duration_s": 15.008447722000001,
+        "median_state_rate_hz": 500.303684336468,
+        "largest_state_gap_s": 0.008182080000000092
+      }
+    },
+    {
+      "run": "20261116_204242_left_knee_joint_positive-step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_204242_left_knee_joint_positive-step/raw.npz",
+      "stats": {
+        "samples": 12505,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.008295626000002,
+        "median_state_rate_hz": 499.71229064909755,
+        "largest_state_gap_s": 0.008010290999997949
+      }
+    },
+    {
+      "run": "20261116_204506_left_knee_joint_negative-step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_204506_left_knee_joint_negative-step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.005184759000002,
+        "median_state_rate_hz": 499.7513736917119,
+        "largest_state_gap_s": 0.0058891660000011115
+      }
+    },
+    {
+      "run": "20261116_204724_left_knee_joint_positive-step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_204724_left_knee_joint_positive-step/raw.npz",
+      "stats": {
+        "samples": 11002,
+        "capacity": 16100,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1100,
+        "duration_s": 22.002629511000002,
+        "median_state_rate_hz": 499.75162344329283,
+        "largest_state_gap_s": 0.0061828610000027595
+      }
+    },
+    {
+      "run": "20261116_204944_left_knee_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_204944_left_knee_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.003885508000003,
+        "median_state_rate_hz": 499.82968303545266,
+        "largest_state_gap_s": 0.00647028500000002
+      }
+    },
+    {
+      "run": "20261116_205144_left_knee_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_205144_left_knee_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14506,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.008491349000003,
+        "median_state_rate_hz": 499.6108031843435,
+        "largest_state_gap_s": 0.008517514999999865
+      }
+    },
+    {
+      "run": "20261116_205441_left_knee_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_205441_left_knee_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.005070857000003,
+        "median_state_rate_hz": 499.83567902029944,
+        "largest_state_gap_s": 0.008456699999999984
+      }
+    },
+    {
+      "run": "20261116_210913_right_knee_joint_positive-step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_210913_right_knee_joint_positive-step/raw.npz",
+      "stats": {
+        "samples": 11005,
+        "capacity": 16100,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1100,
+        "duration_s": 22.007347337000002,
+        "median_state_rate_hz": 499.9807507413351,
+        "largest_state_gap_s": 0.005895071999999502
+      }
+    },
+    {
+      "run": "20261116_211153_right_knee_joint_positive-step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_211153_right_knee_joint_positive-step/raw.npz",
+      "stats": {
+        "samples": 11003,
+        "capacity": 16100,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1100,
+        "duration_s": 22.003584998,
+        "median_state_rate_hz": 499.86391204983875,
+        "largest_state_gap_s": 0.006667558000000184
+      }
+    },
+    {
+      "run": "20261116_211300_right_knee_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_211300_right_knee_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14501,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 28.999466006000002,
+        "median_state_rate_hz": 499.77884785983395,
+        "largest_state_gap_s": 0.006531452999997356
+      }
+    },
+    {
+      "run": "20261116_211419_right_knee_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_211419_right_knee_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14504,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.005664778000003,
+        "median_state_rate_hz": 499.8098223626699,
+        "largest_state_gap_s": 0.009305536999999475
+      }
+    },
+    {
+      "run": "20261116_211540_right_knee_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_211540_right_knee_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14504,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.005193903000002,
+        "median_state_rate_hz": 499.41493540317083,
+        "largest_state_gap_s": 0.007675469999998796
+      }
+    },
+    {
+      "run": "20261116_212743_left_ankle_joint_step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_212743_left_ankle_joint_step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.00747502,
+        "median_state_rate_hz": 499.29374899220704,
+        "largest_state_gap_s": 0.005502343000000742
+      }
+    },
+    {
+      "run": "20261116_212921_left_ankle_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_212921_left_ankle_joint_step/raw.npz",
+      "stats": {
+        "samples": 12501,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1249,
+        "duration_s": 25.001187331,
+        "median_state_rate_hz": 500.01900072210026,
+        "largest_state_gap_s": 0.011428588000001128
+      }
+    },
+    {
+      "run": "20261116_213038_left_ankle_joint_sine",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_213038_left_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.006791131000004,
+        "median_state_rate_hz": 499.5598877387036,
+        "largest_state_gap_s": 0.00612515199999919
+      }
+    },
+    {
+      "run": "20261116_213240_left_ankle_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_213240_left_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14502,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.006110724000003,
+        "median_state_rate_hz": 499.4840329940912,
+        "largest_state_gap_s": 0.006411637999999442
+      }
+    },
+    {
+      "run": "20261116_213356_left_ankle_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_213356_left_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14500,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.000547153000003,
+        "median_state_rate_hz": 499.6724646991941,
+        "largest_state_gap_s": 0.006784426999999482
+      }
+    },
+    {
+      "run": "20261116_213524_left_ankle_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_213524_left_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.00581558,
+        "median_state_rate_hz": 499.84329912579915,
+        "largest_state_gap_s": 0.005573496000000233
+      }
+    },
+    {
+      "run": "20261116_214422_right_ankle_joint_step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_214422_right_ankle_joint_step/raw.npz",
+      "stats": {
+        "samples": 12502,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.002176560000002,
+        "median_state_rate_hz": 499.9025190081089,
+        "largest_state_gap_s": 0.0065103350000015325
+      }
+    },
+    {
+      "run": "20261116_214530_right_ankle_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_214530_right_ankle_joint_step/raw.npz",
+      "stats": {
+        "samples": 12502,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.006420979,
+        "median_state_rate_hz": 499.296241946674,
+        "largest_state_gap_s": 0.005663435999998967
+      }
+    },
+    {
+      "run": "20261116_214647_right_ankle_joint_sine",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_214647_right_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14501,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.000396543,
+        "median_state_rate_hz": 499.5026202658647,
+        "largest_state_gap_s": 0.006733338000000089
+      }
+    },
+    {
+      "run": "20261116_214824_right_ankle_joint_sine",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_214824_right_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.004013793000002,
+        "median_state_rate_hz": 499.1043572311219,
+        "largest_state_gap_s": 0.005938558000000427
+      }
+    },
+    {
+      "run": "20261116_214952_right_ankle_joint_sine",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_214952_right_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14502,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.002572675000003,
+        "median_state_rate_hz": 499.6247817882836,
+        "largest_state_gap_s": 0.007709125000001649
+      }
+    },
+    {
+      "run": "20261116_215121_right_ankle_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_215121_right_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14501,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 28.999998492000003,
+        "median_state_rate_hz": 500.5588739830841,
+        "largest_state_gap_s": 0.0036390129999972487
+      }
+    },
+    {
+      "run": "20261116_215301_right_ankle_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_215301_right_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14500,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 28.998274956000003,
+        "median_state_rate_hz": 500.60498111932907,
+        "largest_state_gap_s": 0.003577110000000161
+      }
+    },
+    {
+      "run": "20261116_215341_right_ankle_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_215341_right_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14501,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.00011251,
+        "median_state_rate_hz": 500.4799602818934,
+        "largest_state_gap_s": 0.003490638000000601
+      }
+    },
+    {
+      "run": "20261116_220747_left_ankle_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_220747_left_ankle_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14500,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 28.999740355,
+        "median_state_rate_hz": 499.73613931819006,
+        "largest_state_gap_s": 0.00640707800000051
+      }
+    },
+    {
+      "run": "20261116_221438_left_hip_pitch_joint_step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_221438_left_hip_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.005975889000002,
+        "median_state_rate_hz": 499.8228128126802,
+        "largest_state_gap_s": 0.006660820000000456
+      }
+    },
+    {
+      "run": "20261116_221638_left_hip_pitch_joint_step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_221638_left_hip_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.007595401000003,
+        "median_state_rate_hz": 500.0135003645717,
+        "largest_state_gap_s": 0.006149764999999974
+      }
+    },
+    {
+      "run": "20261116_221818_left_hip_pitch_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_221818_left_hip_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.006102379,
+        "median_state_rate_hz": 500.13803809866425,
+        "largest_state_gap_s": 0.006293918000000787
+      }
+    },
+    {
+      "run": "20261116_221947_left_hip_pitch_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_221947_left_hip_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.00443143,
+        "median_state_rate_hz": 499.9287601517224,
+        "largest_state_gap_s": 0.00587345699999986
+      }
+    },
+    {
+      "run": "20261116_222135_left_hip_pitch_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_222135_left_hip_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.004618748000002,
+        "median_state_rate_hz": 499.9873753191159,
+        "largest_state_gap_s": 0.006403148000000414
+      }
+    },
+    {
+      "run": "20261116_222308_left_hip_pitch_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_222308_left_hip_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14501,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.002404589,
+        "median_state_rate_hz": 499.2922532308561,
+        "largest_state_gap_s": 0.007805936999999985
+      }
+    },
+    {
+      "run": "20261116_222549_right_hip_pitch_joint_step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_222549_right_hip_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.006234978000002,
+        "median_state_rate_hz": 499.72615006979447,
+        "largest_state_gap_s": 0.006516817000001396
+      }
+    },
+    {
+      "run": "20261116_222659_right_hip_pitch_joint_step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_222659_right_hip_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.005868154,
+        "median_state_rate_hz": 499.35757647776245,
+        "largest_state_gap_s": 0.006336227000002026
+      }
+    },
+    {
+      "run": "20261116_222827_right_hip_pitch_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_222827_right_hip_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.005931624000002,
+        "median_state_rate_hz": 500.3429851165122,
+        "largest_state_gap_s": 0.006410363999999724
+      }
+    },
+    {
+      "run": "20261116_222940_right_hip_pitch_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_222940_right_hip_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14502,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.002662911,
+        "median_state_rate_hz": 499.65074413007807,
+        "largest_state_gap_s": 0.006456887000000577
+      }
+    },
+    {
+      "run": "20261116_223100_right_hip_pitch_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_223100_right_hip_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14504,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.006241128000003,
+        "median_state_rate_hz": 499.4792928374421,
+        "largest_state_gap_s": 0.006589266999998955
+      }
+    },
+    {
+      "run": "20261116_223218_right_hip_pitch_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_223218_right_hip_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14501,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.010226685000003,
+        "median_state_rate_hz": 500.3805394002284,
+        "largest_state_gap_s": 0.031088240999999073
+      }
+    },
+    {
+      "run": "20261116_223454_left_hip_roll_joint_step",
+      "result": "aborted",
+      "classification": "excluded_aborted",
+      "reason": "RuntimeError: Joint following error exceeded the configured safety limit.",
+      "raw": "datasets/h1/raw/20261116_223454_left_hip_roll_joint_step/raw.npz",
+      "stats": {
+        "samples": 5501,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 550,
+        "duration_s": 11.002312652,
+        "median_state_rate_hz": 498.86732174591396,
+        "largest_state_gap_s": 0.005628380000000988
+      }
+    },
+    {
+      "run": "20261116_223815_left_hip_roll_joint_step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261116_223815_left_hip_roll_joint_step/raw.npz",
+      "stats": {
+        "samples": 12503,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.003678729,
+        "median_state_rate_hz": 499.2812845908421,
+        "largest_state_gap_s": 0.006676611999999693
+      }
+    },
+    {
+      "run": "20261116_224656_h1_prepare",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261116_224656_h1_prepare/raw.npz",
+      "stats": {
+        "samples": 7504,
+        "capacity": 11900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 750,
+        "duration_s": 15.006212913,
+        "median_state_rate_hz": 500.0507551516832,
+        "largest_state_gap_s": 0.006877324999999601
+      }
+    },
+    {
+      "run": "20261116_224804_left_hip_roll_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_224804_left_hip_roll_joint_step/raw.npz",
+      "stats": {
+        "samples": 12502,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.004447927,
+        "median_state_rate_hz": 499.92950993887166,
+        "largest_state_gap_s": 0.0067546500000013054
+      }
+    },
+    {
+      "run": "20261116_225146_left_hip_roll_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_225146_left_hip_roll_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26503,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.004751176000006,
+        "median_state_rate_hz": 499.72465171725634,
+        "largest_state_gap_s": 0.015724446000000114
+      }
+    },
+    {
+      "run": "20261116_225322_right_hip_roll_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_225322_right_hip_roll_joint_step/raw.npz",
+      "stats": {
+        "samples": 12504,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.005458047,
+        "median_state_rate_hz": 500.0707600124555,
+        "largest_state_gap_s": 0.0066036660000001746
+      }
+    },
+    {
+      "run": "20261116_225359_right_hip_roll_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_225359_right_hip_roll_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26508,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.016026262000004,
+        "median_state_rate_hz": 499.7503746878842,
+        "largest_state_gap_s": 0.010322519999999002
+      }
+    },
+    {
+      "run": "20261116_225557_left_hip_yaw_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_225557_left_hip_yaw_joint_step/raw.npz",
+      "stats": {
+        "samples": 12501,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.000285157,
+        "median_state_rate_hz": 499.8993952466516,
+        "largest_state_gap_s": 0.006482472000001849
+      }
+    },
+    {
+      "run": "20261116_225627_left_hip_yaw_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_225627_left_hip_yaw_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26505,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.007966276000005,
+        "median_state_rate_hz": 499.73988539015846,
+        "largest_state_gap_s": 0.0066241080000004615
+      }
+    },
+    {
+      "run": "20261116_225725_right_hip_yaw_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_225725_right_hip_yaw_joint_step/raw.npz",
+      "stats": {
+        "samples": 12501,
+        "capacity": 17900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1250,
+        "duration_s": 25.00049033,
+        "median_state_rate_hz": 499.5371788041989,
+        "largest_state_gap_s": 0.006245615000000981
+      }
+    },
+    {
+      "run": "20261116_225755_right_hip_yaw_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261116_225755_right_hip_yaw_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26503,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.005434074,
+        "median_state_rate_hz": 499.32528670622514,
+        "largest_state_gap_s": 0.008470919000000077
+      }
+    },
+    {
+      "run": "20261117_191601_h1_observe",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261117_191601_h1_observe/raw.npz",
+      "stats": {
+        "samples": 5001,
+        "capacity": 9500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 0,
+        "duration_s": 10.000153817000001,
+        "median_state_rate_hz": 499.30484283253344,
+        "largest_state_gap_s": 0.0030915809999996213
+      }
+    },
+    {
+      "run": "20261117_192258_h1_prepare",
+      "result": "aborted",
+      "classification": "excluded_aborted",
+      "reason": "RuntimeError: Joint following error exceeded the configured safety limit.",
+      "raw": "datasets/h1/raw/20261117_192258_h1_prepare/raw.npz",
+      "stats": {
+        "samples": 1894,
+        "capacity": 11900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 189,
+        "duration_s": 3.7859606560000003,
+        "median_state_rate_hz": 499.6080574789264,
+        "largest_state_gap_s": 0.005009194999999994
+      }
+    },
+    {
+      "run": "20261117_192359_h1_prepare",
+      "result": "aborted",
+      "classification": "excluded_aborted",
+      "reason": "RuntimeError: Joint following error exceeded the configured safety limit.",
+      "raw": "datasets/h1/raw/20261117_192359_h1_prepare/raw.npz",
+      "stats": {
+        "samples": 6712,
+        "capacity": 11900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 671,
+        "duration_s": 13.422213600000001,
+        "median_state_rate_hz": 500.09651862814115,
+        "largest_state_gap_s": 0.005455264000000071
+      }
+    },
+    {
+      "run": "20261117_193515_h1_observe",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261117_193515_h1_observe/raw.npz",
+      "stats": {
+        "samples": 5003,
+        "capacity": 9500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 0,
+        "duration_s": 10.004472222,
+        "median_state_rate_hz": 501.7699936526036,
+        "largest_state_gap_s": 0.0046288070000000126
+      }
+    },
+    {
+      "run": "20261117_194929_h1_prepare",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261117_194929_h1_prepare/raw.npz",
+      "stats": {
+        "samples": 7501,
+        "capacity": 11900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 750,
+        "duration_s": 15.000763033,
+        "median_state_rate_hz": 501.0322516964693,
+        "largest_state_gap_s": 0.011744181000000964
+      }
+    },
+    {
+      "run": "20261117_194954_h1_observe",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261117_194954_h1_observe/raw.npz",
+      "stats": {
+        "samples": 5005,
+        "capacity": 9500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 0,
+        "duration_s": 10.008216103,
+        "median_state_rate_hz": 499.4129400889775,
+        "largest_state_gap_s": 0.0047167710000000085
+      }
+    },
+    {
+      "run": "20261117_195026_h1_prepare",
+      "result": "completed",
+      "classification": "excluded_diagnostic",
+      "reason": "passive/prepare/hold diagnostic; not an identification trajectory",
+      "raw": "datasets/h1/raw/20261117_195026_h1_prepare/raw.npz",
+      "stats": {
+        "samples": 7502,
+        "capacity": 11900,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 749,
+        "duration_s": 15.002549371,
+        "median_state_rate_hz": 501.43963318691476,
+        "largest_state_gap_s": 0.009749231999998997
+      }
+    },
+    {
+      "run": "20261117_195206_h1_prepare",
+      "result": "aborted",
+      "classification": "excluded_aborted",
+      "reason": "RuntimeError: Motor communication-loss counters exceeded allowance 21.60: {12: {'start': 182, 'current': 204, 'increase': 22}}.",
+      "raw": "datasets/h1/raw/20261117_195206_h1_prepare/raw.npz",
+      "stats": {
+        "samples": 12102,
+        "capacity": 33500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1209,
+        "duration_s": 24.202083864000002,
+        "median_state_rate_hz": 505.2661363054446,
+        "largest_state_gap_s": 0.021396658000000457
+      }
+    },
+    {
+      "run": "20261117_195304_left_elbow_joint_step",
+      "result": "completed",
+      "classification": "excluded_superseded_or_unreviewed",
+      "reason": "not in reviewed official list; newer/corrected run takes precedence where duplicated",
+      "raw": "datasets/h1/raw/20261117_195304_left_elbow_joint_step/raw.npz",
+      "stats": {
+        "samples": 15502,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.002705998000003,
+        "median_state_rate_hz": 501.83647056382034,
+        "largest_state_gap_s": 0.006690488000000272
+      }
+    },
+    {
+      "run": "20261117_195340_left_elbow_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_195340_left_elbow_joint_step/raw.npz",
+      "stats": {
+        "samples": 15509,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.017735865000002,
+        "median_state_rate_hz": 501.5196044010639,
+        "largest_state_gap_s": 0.010340939999998966
+      }
+    },
+    {
+      "run": "20261117_195602_left_elbow_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_195602_left_elbow_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26504,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.007650531,
+        "median_state_rate_hz": 501.5402300450028,
+        "largest_state_gap_s": 0.014876312999999808
+      }
+    },
+    {
+      "run": "20261117_200009_left_elbow_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_200009_left_elbow_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14504,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1449,
+        "duration_s": 29.005892022,
+        "median_state_rate_hz": 501.8928890309656,
+        "largest_state_gap_s": 0.015517990999999842
+      }
+    },
+    {
+      "run": "20261117_200121_right_elbow_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_200121_right_elbow_joint_step/raw.npz",
+      "stats": {
+        "samples": 15503,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.0068349,
+        "median_state_rate_hz": 501.9580127181136,
+        "largest_state_gap_s": 0.011471235000001911
+      }
+    },
+    {
+      "run": "20261117_200302_right_elbow_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_200302_right_elbow_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26509,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2649,
+        "duration_s": 53.017480481,
+        "median_state_rate_hz": 501.2797672457583,
+        "largest_state_gap_s": 0.017687703
+      }
+    },
+    {
+      "run": "20261117_200434_right_elbow_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_200434_right_elbow_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14507,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.011316554,
+        "median_state_rate_hz": 500.59282705497105,
+        "largest_state_gap_s": 0.015756941000000246
+      }
+    },
+    {
+      "run": "20261117_200552_left_shoulder_pitch_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_200552_left_shoulder_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 15500,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1548,
+        "duration_s": 30.998646074000003,
+        "median_state_rate_hz": 500.94126864407883,
+        "largest_state_gap_s": 0.016753993000000023
+      }
+    },
+    {
+      "run": "20261117_200731_left_shoulder_pitch_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_200731_left_shoulder_pitch_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26506,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.010959906000004,
+        "median_state_rate_hz": 501.3702448789081,
+        "largest_state_gap_s": 0.01311533900000006
+      }
+    },
+    {
+      "run": "20261117_200924_left_shoulder_pitch_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_200924_left_shoulder_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.004472114000002,
+        "median_state_rate_hz": 501.6399865259181,
+        "largest_state_gap_s": 0.010667982000000187
+      }
+    },
+    {
+      "run": "20261117_201118_right_shoulder_pitch_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_201118_right_shoulder_pitch_joint_step/raw.npz",
+      "stats": {
+        "samples": 15507,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.011538238000004,
+        "median_state_rate_hz": 502.0962518512811,
+        "largest_state_gap_s": 0.009165147000000928
+      }
+    },
+    {
+      "run": "20261117_201321_right_shoulder_pitch_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_201321_right_shoulder_pitch_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26505,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.008501681000006,
+        "median_state_rate_hz": 500.24336839803476,
+        "largest_state_gap_s": 0.007036089999999717
+      }
+    },
+    {
+      "run": "20261117_201508_right_shoulder_pitch_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_201508_right_shoulder_pitch_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14506,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.01080595,
+        "median_state_rate_hz": 501.8195978618639,
+        "largest_state_gap_s": 0.023793578000002924
+      }
+    },
+    {
+      "run": "20261117_201650_left_shoulder_roll_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_201650_left_shoulder_roll_joint_step/raw.npz",
+      "stats": {
+        "samples": 15505,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.008297603000003,
+        "median_state_rate_hz": 500.53544779540323,
+        "largest_state_gap_s": 0.007073027999999759
+      }
+    },
+    {
+      "run": "20261117_201833_left_shoulder_roll_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_201833_left_shoulder_roll_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26507,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.012364847,
+        "median_state_rate_hz": 502.06398504249586,
+        "largest_state_gap_s": 0.007951614999999634
+      }
+    },
+    {
+      "run": "20261117_202003_left_shoulder_roll_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_202003_left_shoulder_roll_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14501,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.000595251000004,
+        "median_state_rate_hz": 500.25175169382015,
+        "largest_state_gap_s": 0.006071776000000195
+      }
+    },
+    {
+      "run": "20261117_202221_right_shoulder_roll_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_202221_right_shoulder_roll_joint_step/raw.npz",
+      "stats": {
+        "samples": 15508,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.013777571000002,
+        "median_state_rate_hz": 503.0150723436319,
+        "largest_state_gap_s": 0.013999693999998897
+      }
+    },
+    {
+      "run": "20261117_202332_right_shoulder_roll_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_202332_right_shoulder_roll_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26502,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2649,
+        "duration_s": 53.000866328,
+        "median_state_rate_hz": 500.9216959214001,
+        "largest_state_gap_s": 0.007770979000000011
+      }
+    },
+    {
+      "run": "20261117_202545_right_shoulder_roll_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_202545_right_shoulder_roll_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14503,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1448,
+        "duration_s": 29.005504388000002,
+        "median_state_rate_hz": 502.36324228244456,
+        "largest_state_gap_s": 0.011582498999999302
+      }
+    },
+    {
+      "run": "20261117_202707_left_shoulder_yaw_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_202707_left_shoulder_yaw_joint_step/raw.npz",
+      "stats": {
+        "samples": 15510,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.016621546000003,
+        "median_state_rate_hz": 505.74628933996496,
+        "largest_state_gap_s": 0.014173214999999573
+      }
+    },
+    {
+      "run": "20261117_202826_left_shoulder_yaw_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_202826_left_shoulder_yaw_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26500,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2649,
+        "duration_s": 52.998382869000004,
+        "median_state_rate_hz": 504.00533035989815,
+        "largest_state_gap_s": 0.009744152999999756
+      }
+    },
+    {
+      "run": "20261117_203014_left_shoulder_yaw_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_203014_left_shoulder_yaw_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14504,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.006064565000003,
+        "median_state_rate_hz": 501.2830339253588,
+        "largest_state_gap_s": 0.007143234000000831
+      }
+    },
+    {
+      "run": "20261117_203144_right_shoulder_yaw_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_203144_right_shoulder_yaw_joint_step/raw.npz",
+      "stats": {
+        "samples": 15502,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.004186614,
+        "median_state_rate_hz": 502.0629767716249,
+        "largest_state_gap_s": 0.008146614999997581
+      }
+    },
+    {
+      "run": "20261117_203253_right_shoulder_yaw_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_203253_right_shoulder_yaw_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26509,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2650,
+        "duration_s": 53.012958142,
+        "median_state_rate_hz": 501.58551180329783,
+        "largest_state_gap_s": 0.01634043499999649
+      }
+    },
+    {
+      "run": "20261117_203442_right_shoulder_yaw_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_203442_right_shoulder_yaw_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14506,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.0091746,
+        "median_state_rate_hz": 500.81557816919565,
+        "largest_state_gap_s": 0.016289428000000328
+      }
+    },
+    {
+      "run": "20261117_203609_torso_joint_step",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_203609_torso_joint_step/raw.npz",
+      "stats": {
+        "samples": 15502,
+        "capacity": 21500,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1550,
+        "duration_s": 31.003624802,
+        "median_state_rate_hz": 502.56433451685416,
+        "largest_state_gap_s": 0.013460431999999578
+      }
+    },
+    {
+      "run": "20261117_203741_torso_joint_multi-sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_203741_torso_joint_multi-sine/raw.npz",
+      "stats": {
+        "samples": 26509,
+        "capacity": 34700,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 2649,
+        "duration_s": 53.015724471000006,
+        "median_state_rate_hz": 501.056979698639,
+        "largest_state_gap_s": 0.012794255000002863
+      }
+    },
+    {
+      "run": "20261117_203947_torso_joint_sine",
+      "result": "completed",
+      "classification": "selected_small_signal",
+      "reason": "referenced by reviewed lower/upper official manifest",
+      "raw": "datasets/h1/raw/20261117_203947_torso_joint_sine/raw.npz",
+      "stats": {
+        "samples": 14505,
+        "capacity": 20300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 1450,
+        "duration_s": 29.008229527,
+        "median_state_rate_hz": 500.20420836813537,
+        "largest_state_gap_s": 0.007723604000000606
+      }
+    },
+    {
+      "run": "20261120_152448_h1_walk1_lower_body_amp0.60_speed0.50",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_152448_h1_walk1_lower_body_amp0.60_speed0.50/raw.npz",
+      "stats": {
+        "samples": 32081,
+        "capacity": 41396,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3207,
+        "duration_s": 64.160905736,
+        "median_state_rate_hz": 501.03501307918674,
+        "largest_state_gap_s": 0.006711873000000423
+      }
+    },
+    {
+      "run": "20261120_152657_h1_walk1_lower_body_amp0.75_speed0.50",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_152657_h1_walk1_lower_body_amp0.75_speed0.50/raw.npz",
+      "stats": {
+        "samples": 32090,
+        "capacity": 41396,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3208,
+        "duration_s": 64.178217851,
+        "median_state_rate_hz": 500.7664230103958,
+        "largest_state_gap_s": 0.006403789
+      }
+    },
+    {
+      "run": "20261120_152849_h1_walk1_lower_body_amp0.90_speed0.50",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_152849_h1_walk1_lower_body_amp0.90_speed0.50/raw.npz",
+      "stats": {
+        "samples": 32084,
+        "capacity": 41396,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3204,
+        "duration_s": 64.166834014,
+        "median_state_rate_hz": 500.73407615706617,
+        "largest_state_gap_s": 0.009682842000000136
+      }
+    },
+    {
+      "run": "20261120_154112_h1_sub3_largebox_003_upper_body_amp0.60_speed0.50",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_154112_h1_sub3_largebox_003_upper_body_amp0.60_speed0.50/raw.npz",
+      "stats": {
+        "samples": 32985,
+        "capacity": 42477,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3298,
+        "duration_s": 65.967210511,
+        "median_state_rate_hz": 499.786716018659,
+        "largest_state_gap_s": 0.0080841009999979
+      }
+    },
+    {
+      "run": "20261120_154411_h1_sub3_largebox_003_upper_body_amp0.90_speed0.30",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_154411_h1_sub3_largebox_003_upper_body_amp0.90_speed0.30/raw.npz",
+      "stats": {
+        "samples": 37304,
+        "capacity": 47660,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3730,
+        "duration_s": 74.60612270200001,
+        "median_state_rate_hz": 500.1415400527199,
+        "largest_state_gap_s": 0.008302375000000417
+      }
+    },
+    {
+      "run": "20261120_155247_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.50",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_155247_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.50/raw.npz",
+      "stats": {
+        "samples": 54507,
+        "capacity": 68300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 5449,
+        "duration_s": 109.01213304000001,
+        "median_state_rate_hz": 500.99347005126964,
+        "largest_state_gap_s": 0.010146364000000574
+      }
+    },
+    {
+      "run": "20261120_155811_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.90_speed0.50",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_155811_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.90_speed0.50/raw.npz",
+      "stats": {
+        "samples": 54504,
+        "capacity": 68300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 5447,
+        "duration_s": 109.00684435500001,
+        "median_state_rate_hz": 501.5515497194162,
+        "largest_state_gap_s": 0.008514730000001691
+      }
+    },
+    {
+      "run": "20261120_161005_h1_h1_torso_large_torso_only_amp0.60_speed0.50",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_161005_h1_h1_torso_large_torso_only_amp0.60_speed0.50/raw.npz",
+      "stats": {
+        "samples": 54506,
+        "capacity": 68300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 5446,
+        "duration_s": 109.009527894,
+        "median_state_rate_hz": 503.6656788106629,
+        "largest_state_gap_s": 0.008490945999994892
+      }
+    },
+    {
+      "run": "20261120_161326_h1_h1_torso_large_torso_only_amp0.90_speed0.50",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_161326_h1_h1_torso_large_torso_only_amp0.90_speed0.50/raw.npz",
+      "stats": {
+        "samples": 54502,
+        "capacity": 68300,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 5438,
+        "duration_s": 109.00275620100001,
+        "median_state_rate_hz": 503.77376930608034,
+        "largest_state_gap_s": 0.015115506000000778
+      }
+    },
+    {
+      "run": "20261120_161757_h1_walk1_subject1_lower_body_amp0.75_speed0.40",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_161757_h1_walk1_subject1_lower_body_amp0.75_speed0.40/raw.npz",
+      "stats": {
+        "samples": 34982,
+        "capacity": 44870,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3491,
+        "duration_s": 69.96211200500001,
+        "median_state_rate_hz": 502.2740457431702,
+        "largest_state_gap_s": 0.01682967800000057
+      }
+    },
+    {
+      "run": "20261120_162020_h1_sub3_largebox_003_upper_body_amp0.60_speed0.30",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_162020_h1_sub3_largebox_003_upper_body_amp0.60_speed0.30/raw.npz",
+      "stats": {
+        "samples": 37309,
+        "capacity": 47660,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3730,
+        "duration_s": 74.616059194,
+        "median_state_rate_hz": 501.48150172640135,
+        "largest_state_gap_s": 0.015258298999999198
+      }
+    },
+    {
+      "run": "20261120_162414_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.75",
+      "result": "aborted",
+      "classification": "excluded_aborted",
+      "reason": "RuntimeError: LowState is stale: 25.9 ms.",
+      "raw": "datasets/h1/raw/20261120_162414_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.75/raw.npz",
+      "stats": {
+        "samples": 33842,
+        "capacity": 57101,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 3383,
+        "duration_s": 67.68126530400001,
+        "median_state_rate_hz": 501.67106632054634,
+        "largest_state_gap_s": 0.03357125000000849
+      }
+    },
+    {
+      "run": "20261120_163031_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.75",
+      "result": "completed",
+      "classification": "selected_project_motion",
+      "reason": "explicitly selected complete project-motion recording",
+      "raw": "datasets/h1/raw/20261120_163031_h1_h1_upper_yaw_elbow_excitation_upper_body_amp0.60_speed0.75/raw.npz",
+      "stats": {
+        "samples": 45171,
+        "capacity": 57101,
+        "dropped": 0,
+        "malformed": 0,
+        "states_before_command": 0,
+        "commands": 4516,
+        "duration_s": 90.339363887,
+        "median_state_rate_hz": 500.4879757767362,
+        "largest_state_gap_s": 0.00685106900000676
+      }
+    }
+  ]
+}

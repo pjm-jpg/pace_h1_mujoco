@@ -1,0 +1,68 @@
+{
+  "robot": "h1",
+  "base_xml": "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/robot_model/h1/h1.xml",
+  "sources": [
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_left_knee_cmaes_v1/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_right_knee_cmaes_v2_wide/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_left_ankle_cmaes_v1/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_right_ankle_cmaes_v3_allnew/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_left_hip_pitch_cmaes_v2_boundcheck/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_right_hip_pitch_cmaes_v2_boundcheck/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_left_hip_roll_cmaes_v2_boundcheck/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_right_hip_roll_cmaes_v1/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_left_hip_yaw_cmaes_v1/best_params.json",
+    "/home/pjm/Desktop/humanoid-projects/pace/sim2real-robot-identification/sysid_mujoco/results/h1/real_right_hip_yaw_cmaes_v1/best_params.json"
+  ],
+  "parameters": {
+    "left_knee_joint": {
+      "armature": 0.4240549348199313,
+      "frictionloss": 3.4116553297202143,
+      "damping": 5.024965560317147
+    },
+    "right_knee_joint": {
+      "armature": 0.43637967243495973,
+      "frictionloss": 3.0587443652578106,
+      "damping": 6.799661932298296
+    },
+    "left_ankle_joint": {
+      "armature": 0.1518691435621792,
+      "frictionloss": 1.1275868518263599,
+      "damping": 0.023706570846025343
+    },
+    "right_ankle_joint": {
+      "armature": 0.10653268209577309,
+      "frictionloss": 0.5776230209005346,
+      "damping": 0.0003937204643285064
+    },
+    "left_hip_pitch_joint": {
+      "armature": 2.20702307251186e-05,
+      "frictionloss": 2.367450200785672,
+      "damping": 1.156570403168084
+    },
+    "right_hip_pitch_joint": {
+      "armature": 7.730939702188522e-06,
+      "frictionloss": 1.5480172426297636,
+      "damping": 6.91990256418513
+    },
+    "left_hip_roll_joint": {
+      "armature": 0.8626109093516134,
+      "frictionloss": 5.147765052514356,
+      "damping": 1.9691963104806476e-05
+    },
+    "right_hip_roll_joint": {
+      "armature": 0.12859083575002336,
+      "frictionloss": 2.401192604904872,
+      "damping": 0.5710227444617384
+    },
+    "left_hip_yaw_joint": {
+      "armature": 0.14828581069623634,
+      "frictionloss": 2.897100109462433,
+      "damping": 1.9912181281833696e-05
+    },
+    "right_hip_yaw_joint": {
+      "armature": 0.09539045389461985,
+      "frictionloss": 3.17489744744784,
+      "damping": 2.342137037114611e-05
+    }
+  }
+}

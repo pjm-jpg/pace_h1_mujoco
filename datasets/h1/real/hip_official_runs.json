@@ -1,0 +1,62 @@
+{
+  "frozen_at": "2026-11-16",
+  "robot": "Unitree H1 19-DoF GO2",
+  "protocol": {
+    "state_rate_hz": 500,
+    "command_rate_hz": 50,
+    "fit_frequencies_hz": [0.5, 2.0],
+    "held_out_frequencies_hz": [1.0],
+    "step_role": "held_out_validation",
+    "cmaes_seed": 20261116
+  },
+  "crop_windows_s": {
+    "single_step": [8.0, 18.0],
+    "single_sine": [8.0, 22.0],
+    "multi_sine_0p5hz": [8.0, 22.0],
+    "multi_sine_1hz": [20.0, 34.0],
+    "multi_sine_2hz": [32.0, 46.0]
+  },
+  "official_runs": {
+    "left_hip_pitch_joint": {
+      "step": "datasets/h1/raw/20261116_221818_left_hip_pitch_joint_step/raw.npz",
+      "sine_0p5hz": "datasets/h1/raw/20261116_221947_left_hip_pitch_joint_sine/raw.npz",
+      "sine_1hz": "datasets/h1/raw/20261116_222135_left_hip_pitch_joint_sine/raw.npz",
+      "sine_2hz": "datasets/h1/raw/20261116_222308_left_hip_pitch_joint_sine/raw.npz"
+    },
+    "right_hip_pitch_joint": {
+      "step": "datasets/h1/raw/20261116_222827_right_hip_pitch_joint_step/raw.npz",
+      "sine_0p5hz": "datasets/h1/raw/20261116_222940_right_hip_pitch_joint_sine/raw.npz",
+      "sine_1hz": "datasets/h1/raw/20261116_223100_right_hip_pitch_joint_sine/raw.npz",
+      "sine_2hz": "datasets/h1/raw/20261116_223218_right_hip_pitch_joint_sine/raw.npz"
+    },
+    "left_hip_roll_joint": {
+      "step": "datasets/h1/raw/20261116_224804_left_hip_roll_joint_step/raw.npz",
+      "multi_sine": "datasets/h1/raw/20261116_225146_left_hip_roll_joint_multi-sine/raw.npz"
+    },
+    "right_hip_roll_joint": {
+      "step": "datasets/h1/raw/20261116_225322_right_hip_roll_joint_step/raw.npz",
+      "multi_sine": "datasets/h1/raw/20261116_225359_right_hip_roll_joint_multi-sine/raw.npz"
+    },
+    "left_hip_yaw_joint": {
+      "step": "datasets/h1/raw/20261116_225557_left_hip_yaw_joint_step/raw.npz",
+      "multi_sine": "datasets/h1/raw/20261116_225627_left_hip_yaw_joint_multi-sine/raw.npz"
+    },
+    "right_hip_yaw_joint": {
+      "step": "datasets/h1/raw/20261116_225725_right_hip_yaw_joint_step/raw.npz",
+      "multi_sine": "datasets/h1/raw/20261116_225755_right_hip_yaw_joint_multi-sine/raw.npz"
+    }
+  },
+  "excluded_runs": {
+    "datasets/h1/raw/20261116_223454_left_hip_roll_joint_step": "aborted after following-error safety stop",
+    "datasets/h1/raw/20261116_223815_left_hip_roll_joint_step": "completed before the final raised-arm preparation pose",
+    "datasets/h1/raw/20261116_221438_left_hip_pitch_joint_step": "smaller diagnostic step superseded by the official 0.03-rad run",
+    "datasets/h1/raw/20261116_221638_left_hip_pitch_joint_step": "smaller diagnostic step superseded by the official 0.03-rad run",
+    "datasets/h1/raw/20261116_222549_right_hip_pitch_joint_step": "smaller diagnostic step superseded by the official 0.03-rad run",
+    "datasets/h1/raw/20261116_222659_right_hip_pitch_joint_step": "smaller diagnostic step superseded by the official 0.03-rad run"
+  },
+  "notes": [
+    "Pitch runs were completed before the raised-arm preparation update but are retained because no arm interference or safety abort occurred.",
+    "Roll and yaw runs use the final H1 real default arm targets: shoulder pitch 0.2 rad and elbow 0.32 rad.",
+    "The 1 Hz trajectory is never used by CMA-ES and is reserved for frequency-domain validation."
+  ]
+}

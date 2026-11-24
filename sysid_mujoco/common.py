@@ -4,6 +4,7 @@ import importlib.util
 import json
 import re
 import sys
+import tempfile
 import types
 import xml.etree.ElementTree as ET
 from dataclasses import dataclass
@@ -221,11 +222,18 @@ def build_fixed_base_model_xml(
     robot: str,
     actuator_mode: str = "general",
     actuator_gains: dict[str, tuple[float, float]] | None = None,
+    source_model_xml: Path | None = None,
 ) -> Path:
-    source_xml = get_robot_model_xml_path(robot)
+    source_xml = (
+        get_robot_model_xml_path(robot)
+        if source_model_xml is None
+        else Path(source_model_xml).expanduser().resolve()
+    )
+    if not source_xml.is_file():
+        raise FileNotFoundError(f"Source model XML not found: {source_xml}")
     output_dir = GENERATED_DIR / robot
     output_dir.mkdir(parents=True, exist_ok=True)
-    output_xml = output_dir / f"{robot}_fixed_base_sysid.xml"
+    output_xml = output_dir / f"{source_xml.stem}_fixed_base_sysid.xml"
 
     tree = ET.parse(source_xml)
     root = tree.getroot()
@@ -248,7 +256,25 @@ def build_fixed_base_model_xml(
 
     _disable_all_collisions(root)
 
-    tree.write(output_xml, encoding="utf-8", xml_declaration=True)
+    # Several offline fits may build this shared generated model concurrently.
+    # Write a complete sibling file first and publish it with an atomic rename so
+    # another process can never observe a partially written XML document.
+    temporary_path: Path | None = None
+    try:
+        with tempfile.NamedTemporaryFile(
+            mode="wb",
+            prefix=f".{output_xml.stem}.",
+            suffix=".tmp",
+            dir=output_dir,
+            delete=False,
+        ) as stream:
+            temporary_path = Path(stream.name)
+            tree.write(stream, encoding="utf-8", xml_declaration=True)
+            stream.flush()
+        temporary_path.replace(output_xml)
+    finally:
+        if temporary_path is not None and temporary_path.exists():
+            temporary_path.unlink()
     return output_xml
 
 

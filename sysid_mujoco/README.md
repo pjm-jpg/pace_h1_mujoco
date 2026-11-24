@@ -4,6 +4,48 @@ This directory contains a MuJoCo-based system identification pipeline.
 
 ## Visualize the H1 tests
 
+Preview the exact command timing used by the Holosoma real-H1 collector before
+running any hardware experiment.  This imports `H1SysidPlan` directly from the
+local Holosoma checkout, applies commands at 50 Hz with zero-order hold, and
+steps MuJoCo at 500 Hz:
+
+```bash
+python sysid_mujoco/preview_h1_real_experiment.py \
+  --kind step --joint left_knee_joint --amplitude-rad 0.01
+```
+
+The preview supports separate positive and negative steps, combined steps,
+single-frequency and segmented multi-sine tests, and chirps. It includes the
+two-second pre-hold, two-second post-hold, and the final one-second safety hold
+used by the hardware collector. Add `--headless` for a fast numerical check.
+Use `--preserve-collisions` when the preview must also reject nonadjacent robot
+self-contact. The output plot and metrics are written under
+`sysid_mujoco/results/h1/real_command_preview/`.
+
+Preview the recommended progression before using the same plans on hardware:
+
+```bash
+python sysid_mujoco/preview_h1_real_experiment.py --kind positive-step --amplitude-rad 0.01
+python sysid_mujoco/preview_h1_real_experiment.py --kind negative-step --amplitude-rad 0.01
+python sysid_mujoco/preview_h1_real_experiment.py \
+  --kind sine --amplitude-rad 0.01 --sine-frequency-hz 0.5
+```
+
+Run the complete simulation-only Experiment 8 check for all nine upper-body
+joints with the calibrated lower-body model:
+
+```bash
+MPLCONFIGDIR=/tmp/matplotlib-h1-exp8 \
+  /home/pjm/.pixi/bin/pixi run -e mujoco \
+  python sysid_mujoco/validate_h1_upper_body_experiments.py
+```
+
+This runs one bidirectional step and one 0.5/1/2 Hz segmented multi-sine plan
+per joint (18 runs total) without initializing DDS. Results are saved under
+`sysid_mujoco/results/h1/upper_body_experiment_08/`; the experiment design,
+acceptance criteria, and current 18/18 result are documented in
+`docs/experiments/experiment_08_h1_upper_body_simulation_validation.md`.
+
 Open MuJoCo's interactive viewer and run a visible left-knee step test:
 
 ```bash
@@ -62,6 +104,21 @@ parameters describe the real robot.
 
 ## H1: DDS conversion and CMA-ES
 
+Experiment 1 passive observations contain no commands and must be checked,
+not converted for fitting:
+
+```bash
+python datasets/analyze_h1_observe_log.py \
+  datasets/h1/raw/<timestamp>_h1_observe/raw.npz
+```
+
+This writes `state_report.json` and `state_overview.png` beside the recording.
+The GO `MotorState.lost` value is treated as a cumulative communication-loss
+counter. Historical nonzero values and small background bursts are allowed;
+the default run allowance is 10 counts plus 0.5 count per elapsed second.
+The converter deliberately rejects a manifest or NPZ with
+`command_available=false` or an all-zero `cmd_seq`.
+
 The H1 integration uses the 19-DOF Holosoma MJCF and its real GO2-protocol
 mapping. DDS has 20 physical motor slots; physical motor ID 9 is unused. The
 converter maps physical motor order to the model's joint order and never treats
@@ -96,15 +153,21 @@ physical motor slots. Convert its output directly:
 ```bash
 python datasets/convert_h1_dds_log.py \
   /path/to/records/h1/<run>/raw.npz \
-  datasets/h1/left_knee_step_fit.pt
+  datasets/h1/left_knee_step_fit.pt \
+  --start-time-s 8 --end-time-s 22
 ```
+
+`--start-time-s` and `--end-time-s` crop in the raw recording's relative time
+before uniform resampling. Use them to exclude the suspended prepare/return
+ramps from a joint-excitation fit; the output stores the requested and actual
+crop ranges for traceability.
 
 Run the PACE-style CMA-ES entry point on a single knee first:
 
 ```bash
 python sysid_mujoco/cmaes_fit.py \
   --robot h1 \
-  --dataset datasets/h1/knee_fit.pt \
+  --dataset datasets/h1/knee_fit_0p5hz.pt datasets/h1/knee_fit_2hz.pt \
   --joints left_knee_joint \
   --score-joints left_knee_joint \
   --command-delay-ms 0 \
@@ -144,6 +207,62 @@ for both the selected joints and the complete model.
 Use different recordings for fitting and validation. Do not identify link
 inertia, armature, PD gains, and delay together in the first knee experiment;
 those quantities can compensate for one another.
+
+## H1: combine identified lower-body joints
+
+After selecting one `best_params.json` per joint, merge them into a fixed-base
+replay model with `merge_identified_models.py --output-dir ...`. To transfer
+the same parameters into the original floating-base model while preserving its
+relative mesh paths, use the exact-output form:
+
+```bash
+python sysid_mujoco/merge_identified_models.py \
+  --base-xml robot_model/h1/h1.xml \
+  --best-params <joint-1>/best_params.json <joint-2>/best_params.json \
+  --output-xml robot_model/h1/h1_calibrated_lower_body.xml
+```
+
+The command writes a parameter provenance manifest beside the output XML. It
+does not overwrite `h1.xml`. The current ten-joint candidate and its scene are
+`h1_calibrated_lower_body.xml` and
+`scene_flat_calibrated_lower_body.xml`.
+
+Freeze/check the 41 official processed datasets, summarize all combined-model
+replays, and run the floating-base structural/numerical smoke test with:
+
+```bash
+python datasets/freeze_h1_lower_body_dataset_manifest.py
+python sysid_mujoco/summarize_h1_lower_body_evaluations.py
+python sysid_mujoco/validate_h1_calibrated_model.py
+```
+
+The floating-base check confirms topology, exact parameter transfer, unchanged
+non-identified joints, model compilation, and finite short simulation. It is
+not a standing or policy-safety test. See
+`docs/experiments/experiment_07_h1_lower_body_combined_model.md` for the
+selected parameters, 41 replay results, and remaining limitations.
+
+## H1: full-body simulation and policy regression
+
+After merging all 19 identified joints, compare the nominal, lower-body and
+full-body floating-base models with deterministic full-body tracking and
+drop/contact tests:
+
+```bash
+python sysid_mujoco/validate_h1_full_body_regression.py
+```
+
+Run the saved FastSAC checkpoint through the official Holosoma evaluator on
+both the nominal and full-body calibrated models with:
+
+```bash
+python sysid_mujoco/run_h1_holosoma_policy_regression.py
+```
+
+This is an offline CPU smoke test and never opens DDS. A successful result
+proves model/policy pipeline compatibility, not quantitative locomotion parity
+or real-robot safety. See
+`docs/experiments/experiment_11_h1_full_body_simulation_policy_regression.md`.
 
 By default, it fits per-joint `damping`, `armature`, and `frictionloss` on the
 recorded trajectory. From the repository root, run:

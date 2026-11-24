@@ -71,6 +71,15 @@ def parse_args() -> argparse.Namespace:
         ),
     )
     parser.add_argument(
+        "--base-model-xml",
+        type=Path,
+        default=None,
+        help=(
+            "Optional source XML for the baseline replay. This is useful for "
+            "upper-body identification on top of the calibrated lower-body model."
+        ),
+    )
+    parser.add_argument(
         "--identified-model-xml",
         type=Path,
         default=None,
@@ -91,6 +100,8 @@ def parse_args() -> argparse.Namespace:
     args = parser.parse_args()
     if args.command_delay_ms < 0.0:
         parser.error("--command-delay-ms must be nonnegative")
+    if args.original and args.base_model_xml is not None:
+        parser.error("--original and --base-model-xml are mutually exclusive")
     return args
 
 
@@ -152,9 +163,16 @@ def _extend_piper_trajectory_if_needed(
     )
 
 
-def _build_eval_model(robot: str, dataset_path: Path) -> tuple[mujoco.MjModel, Path]:
+def _build_eval_model(
+    robot: str,
+    dataset_path: Path,
+    source_model_xml: Path | None = None,
+) -> tuple[mujoco.MjModel, Path]:
     # Compile a provisional model to map the recorded gains to actuator order.
-    provisional_xml = build_fixed_base_model_xml(robot)
+    provisional_xml = build_fixed_base_model_xml(
+        robot,
+        source_model_xml=source_model_xml,
+    )
     provisional_model = mujoco.MjModel.from_xml_path(str(provisional_xml))
     joint_names, _ = get_actuated_joint_and_actuator_names(mujoco, provisional_model)
     kp, kd = load_dataset_actuator_gains(dataset_path, num_joints=len(joint_names))
@@ -163,6 +181,7 @@ def _build_eval_model(robot: str, dataset_path: Path) -> tuple[mujoco.MjModel, P
     model_xml = build_fixed_base_model_xml(
         robot,
         actuator_gains=build_actuator_gain_map(joint_names, kp, kd),
+        source_model_xml=source_model_xml,
     )
     model = mujoco.MjModel.from_xml_path(str(model_xml))
     return model, model_xml
@@ -403,7 +422,11 @@ def main() -> None:
     if args.original:
         model, model_xml = _build_eval_model_from_original(args.robot, dataset_path)
     else:
-        model, model_xml = _build_eval_model(args.robot, dataset_path)
+        model, model_xml = _build_eval_model(
+            args.robot,
+            dataset_path,
+            source_model_xml=args.base_model_xml,
+        )
     processed = load_processed_dataset(
         dataset_path=dataset_path,
         model=model,

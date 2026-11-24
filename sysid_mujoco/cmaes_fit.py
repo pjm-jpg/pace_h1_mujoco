@@ -39,6 +39,16 @@ ATTRIBUTES = ("armature", "frictionloss", "damping")
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--robot", default=config.robot)
+    parser.add_argument(
+        "--base-model-xml",
+        type=Path,
+        default=None,
+        help=(
+            "Optional source model to calibrate. For upper-body H1 fits, use "
+            "the combined lower-body calibrated XML so previously identified "
+            "parameters remain fixed."
+        ),
+    )
     parser.add_argument("--dataset", nargs="+", type=Path, required=True)
     parser.add_argument(
         "--joints", nargs="+", default=["left_knee_joint"],
@@ -93,8 +103,16 @@ def _loss(residual_fn, parameter_dict, physical: np.ndarray) -> float:
     result = residual_fn(physical, parameter_dict, return_pred_all=False)
     # MuJoCo sysid versions differ here: some always return the diagnostic
     # triple while others return only the residual unless predictions are asked.
-    residual = result[0] if isinstance(result, tuple) else result
-    residual = np.asarray(residual, dtype=np.float64)
+    residual = result[0] if isinstance(result, tuple) and len(result) == 3 else result
+    if isinstance(residual, (list, tuple)):
+        # Multiple ModelSequences are returned as one residual array per
+        # trajectory. Their lengths need not match, so np.asarray would create
+        # an object/ragged array instead of one CMA-ES objective vector.
+        residual = np.concatenate(
+            [np.asarray(sequence, dtype=np.float64).reshape(-1) for sequence in residual]
+        )
+    else:
+        residual = np.asarray(residual, dtype=np.float64).reshape(-1)
     if not np.all(np.isfinite(residual)):
         return float("inf")
     return float(np.mean(np.square(residual)))
@@ -134,7 +152,10 @@ def main() -> None:
                 "All CMA-ES trajectories must use identical fixed Kp/Kd gains; "
                 f"{dataset_path} differs from {args.dataset[0]}."
             )
-    fixed_xml = build_fixed_base_model_xml(args.robot)
+    fixed_xml = build_fixed_base_model_xml(
+        args.robot,
+        source_model_xml=args.base_model_xml,
+    )
     discovery_spec = mujoco.MjSpec.from_file(str(fixed_xml))
     discovery_spec.option.timestep = 1.0 / config.frequency_collection
     discovery_model = discovery_spec.compile()
@@ -153,6 +174,7 @@ def main() -> None:
     fixed_xml = build_fixed_base_model_xml(
         args.robot,
         actuator_gains=build_actuator_gain_map(actuated_joint_names, dataset_kp, dataset_kd),
+        source_model_xml=args.base_model_xml,
     )
     model_spec = mujoco.MjSpec.from_file(str(fixed_xml))
     model_spec.option.timestep = 1.0 / config.frequency_collection
@@ -247,6 +269,9 @@ def main() -> None:
             cursor += 1
     result = {
         "robot": args.robot,
+        "base_model_xml": str(
+            (args.base_model_xml or fixed_xml).expanduser().resolve()
+        ),
         "datasets": [str(path.resolve()) for path in args.dataset],
         "joints": args.joints,
         "loss": best_loss,
