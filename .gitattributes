@@ -1,0 +1,2 @@
+# Keep the vendored URDF byte-for-byte identical to the portable archive.
+release/h1_isaacsim_v1/source/h1.urdf -text whitespace=cr-at-eol

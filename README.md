@@ -8,12 +8,24 @@
   </div>
 
 
-## Overwiew
+## Overview
 
 A system identification routine for IsaacLab and Mujoco, to estimate **motor parameters**, **inertia**, **mass**, and **center of mass**. It provides scripts for data collection on the real robot (the robot should be in the air with the base fixed if a quadruped, or on a table if a manipulator). 
 This repo interfaces directly with [Pace](https://github.com/leggedrobotics/pace-sim2real) and the new [sys-id functionality](https://github.com/google-deepmind/mujoco/blob/main/python/mujoco/sysid/README.md) of Mujoco.
 
 The models (usd and xml) identified so far can be found in the folder **robot_model**. 
+
+## Unitree H1 19-DoF Sim-to-Real
+
+This fork includes H1 joint-dynamics identification from suspended real-robot recordings. The calibration estimates per-joint armature, viscous damping, and Coulomb friction. The validated outputs cover offline joint tracking and project-motion replay. Foot–ground contact and policy transfer remain outside that validation scope.
+
+- **MuJoCo** · [Calibrated MJCF](robot_model/h1/h1_calibrated_full_body.xml) · [Portable model archive](release/h1_calibrated_full_body_v1.tar.gz) · [Load and verify](release/h1_calibrated_full_body_v1/README_ZH.md)
+- **Isaac Sim 5.1 / Isaac Lab 2.3.0** · [PhysX USD](release/h1_isaacsim_v1/h1_calibrated_physx.usd) · [Portable model archive](release/h1_isaacsim_v1.tar.gz) · [Holosoma launch and verification](release/h1_isaacsim_v1/README_ZH.md)
+- **Experiments** · [Full-range identification report (PDF)](docs/experiments/h1_full_range_system_identification_report.pdf) · [MuJoCo replay and CMA-ES workflow](sysid_mujoco/README.md#h1-dds-conversion-and-cma-es) · [Processed dataset manifest](datasets/h1/real/full_range_official_manifest.json)
+
+On 39 held-out small-signal tests, the calibrated MuJoCo model reduced mean joint-position RMSE from 0.00972 to 0.00593 rad (39.0%). The figures show the held-out results, a real/sim trajectory comparison, and the M0–M4 ablation. The Isaac Sim package was checked by reading back the 19 joints in PhysX and running one Holosoma locomotion PPO iteration.
+
+[Core validation](docs/experiments/h1_calibration_core_validation.png) · [Ablation and project-motion validation](docs/experiments/h1_calibration_ablation_generalization.png)
 
 ## Supported Robots
 
@@ -35,7 +47,7 @@ The models (usd and xml) identified so far can be found in the folder **robot_mo
 1. Install [pixi](https://pixi.prefix.dev/latest/installation/) and clone this repository with its submodule (PACE):
 
 ```bash
-git clone --recursive https://github.com/iit-DLSLab/sim2real-robot-identification.git
+git clone --recursive --branch pjm_pace https://github.com/pjm-jpg/pace_h1_mujoco.git
 # or, in an existing clone
 git submodule update --init
 ```
